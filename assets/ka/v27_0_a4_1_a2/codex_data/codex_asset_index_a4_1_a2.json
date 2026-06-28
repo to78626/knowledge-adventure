@@ -1,0 +1,80 @@
+[
+  {
+    "id": "monster_idiom_bug",
+    "display_name": "成語甲蟲",
+    "kingdom": "語文王國",
+    "type": "小怪",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/monster_idiom_bug.png",
+    "learning_topic": "成語理解與應用",
+    "learning_focus": "理解成語的整體意思，判斷成語適合使用的情境。",
+    "common_mistake": "不要只看成語中的單一字，要先理解整句話的意思與語境。",
+    "codex_intro": "喜歡躲在書頁與卷軸中的語文小怪，會用相似情境考驗冒險者是否真正理解成語意思。",
+    "future_mount": "語文圖鑑新增小怪",
+    "status": "A4.1-A3 可掛載"
+  },
+  {
+    "id": "monster_language_scroll_caterpillar",
+    "display_name": "卷軸毛毛蟲",
+    "kingdom": "語文王國",
+    "type": "小怪",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/monster_language_scroll_caterpillar.png",
+    "learning_topic": "閱讀理解與語詞判斷",
+    "learning_focus": "從句子前後文判斷語詞意思，理解段落中關鍵線索。",
+    "common_mistake": "不要只背單一詞語解釋，要回到句子中確認意思是否合適。",
+    "codex_intro": "在卷軸裡鑽來鑽去的知識小怪，最擅長把關鍵線索藏在句子裡。",
+    "future_mount": "語文圖鑑新增小怪",
+    "status": "A4.1-A3 可掛載"
+  },
+  {
+    "id": "monster_science_owl",
+    "display_name": "自然觀察貓頭鷹",
+    "kingdom": "自然王國",
+    "type": "小怪",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/monster_science_owl.png",
+    "learning_topic": "自然觀察與科學探究",
+    "learning_focus": "觀察現象、比較特徵，分辨變因與實驗結果。",
+    "common_mistake": "不要把看到的現象直接當結論，應先確認觀察條件是否相同。",
+    "codex_intro": "戴著護目鏡的自然觀察者，會提醒冒險者用證據和觀察來回答自然問題。",
+    "future_mount": "自然圖鑑新增小怪",
+    "status": "A4.1-A3 可掛載"
+  },
+  {
+    "id": "monster_social_turtle",
+    "display_name": "地圖烏龜",
+    "kingdom": "社會王國",
+    "type": "小怪",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/monster_social_turtle.png",
+    "learning_topic": "地理、生活與社會理解",
+    "learning_focus": "理解地圖、區域特色、生活方式與社會活動之間的關係。",
+    "common_mistake": "不要只看單一地名或圖示，要把位置、環境與人們活動一起判斷。",
+    "codex_intro": "背著小小城鎮地圖的社會小怪，慢慢走過不同地方，記錄每個區域的生活故事。",
+    "future_mount": "社會圖鑑新增小怪",
+    "status": "A4.1-A3 可掛載"
+  },
+  {
+    "id": "boss_language_scroll_beetle",
+    "display_name": "卷軸甲蟲王",
+    "kingdom": "語文王國",
+    "type": "Boss",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/boss_language_scroll_beetle.png",
+    "learning_topic": "語文綜合應用",
+    "learning_focus": "整合語詞、成語、閱讀理解與句意判斷，找出最合適的答案。",
+    "common_mistake": "遇到長題時不要急著選答案，應先抓關鍵詞、語氣和上下文。",
+    "codex_intro": "守護語文卷軸的 Boss，會用大量書頁與墨水考驗冒險者的語文判斷力。",
+    "future_mount": "語文 Boss 圖鑑",
+    "status": "A4.1-A3 可掛載"
+  },
+  {
+    "id": "boss_social_city_golem",
+    "display_name": "城市石像巨人",
+    "kingdom": "社會王國",
+    "type": "Boss",
+    "image": "assets/ka/v27_0_a4_1_a1/accepted_assets/boss_social_city_golem.png",
+    "learning_topic": "社會綜合應用",
+    "learning_focus": "整合地理、歷史、生活、經濟與公共事務的線索進行判斷。",
+    "common_mistake": "不要只記零散名詞，要看事件發生的原因、影響與人們生活的關聯。",
+    "codex_intro": "由城牆、地圖與街道組成的巨大守護者，象徵社會王國中不同生活面向的連結。",
+    "future_mount": "社會 Boss 圖鑑",
+    "status": "A4.1-A3 可掛載"
+  }
+]
