@@ -233,28 +233,29 @@
 }
 .pk-options-1710{
   min-height:0;
-  height:100%;
+  height:auto;
   overflow:hidden;
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  grid-template-rows:repeat(2,minmax(58px,1fr));
-  align-content:stretch;
-  align-items:stretch;
-  gap:8px;
+  grid-template-rows:repeat(2,auto);
+  grid-auto-rows:auto;
+  align-content:start;
+  align-items:start;
+  gap:6px 8px;
 }
 .pk-choice-1710{
-  min-height:58px;
-  height:100%;
-  max-height:82px;
+  min-height:54px;
+  height:auto;
+  max-height:72px;
   overflow:hidden;
   border:2px solid #07324c;
   border-radius:12px;
   background:#f9feff;
   color:#082840;
   text-align:left;
-  padding:8px 12px;
+  padding:6px 10px;
   font-size:clamp(13px,1vw,18px);
-  line-height:1.12;
+  line-height:1.18;
   font-weight:900;
   box-shadow:0 3px 0 rgba(0,36,54,.20);
   display:flex;
@@ -265,10 +266,10 @@
 .pk-choice-1710:disabled{opacity:.72;}
 .pk-choice-1710 .letter{display:inline-flex;align-items:center;justify-content:center;flex:0 0 26px;width:26px;height:26px;margin-right:8px;border:2px solid #07324c;border-radius:8px;background:#ffd84f;color:#061a2b;font-weight:1000;vertical-align:middle;}
 .pk-choice-1710 .optionTextA20{vertical-align:middle;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:normal;}
-.pk-choice-1710.adaptShort{min-height:58px;max-height:64px;font-size:clamp(15px,1.12vw,20px);}
-.pk-choice-1710.adaptMedium{min-height:62px;max-height:72px;font-size:clamp(13px,1vw,18px);}
-.pk-choice-1710.adaptLong{min-height:66px;max-height:78px;font-size:clamp(12px,.9vw,15px);}
-.pk-choice-1710.adaptTiny{min-height:68px;max-height:82px;font-size:clamp(11px,.78vw,13px);}
+.pk-choice-1710.adaptShort,.pk-choice-1710.pk-choice-short{min-height:54px;max-height:58px;font-size:clamp(15px,1.12vw,20px);}
+.pk-choice-1710.adaptMedium,.pk-choice-1710.pk-choice-medium{min-height:58px;max-height:64px;font-size:clamp(13px,1vw,18px);}
+.pk-choice-1710.adaptLong,.pk-choice-1710.pk-choice-long{min-height:64px;max-height:72px;font-size:clamp(12px,.9vw,15px);}
+.pk-choice-1710.adaptTiny,.pk-choice-1710.pk-choice-tiny{min-height:66px;max-height:74px;font-size:clamp(11px,.78vw,13px);}
 .pk-lock-row-1710{display:flex;gap:9px;align-items:center;min-height:32px;overflow:hidden;}
 .pk-lock-row-1710 .btn{height:34px;min-height:32px;padding:3px 13px;font-size:clamp(13px,.95vw,16px);}
 .pk-lock-row-1710 span{font-size:clamp(12px,.9vw,15px);font-weight:800;color:#234;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -303,8 +304,8 @@
   .pk-stage-hud-1710{width:clamp(186px,16vw,250px);font-size:12px;min-height:86px;top:calc(-46px + var(--safe-top,0px));}
   .pk-card-1710{grid-template-rows:minmax(26px,30px) minmax(50px,58px) minmax(0,1fr) minmax(31px,35px);gap:5px;padding:6px;}
   .pk-question-1710{min-height:50px;max-height:58px;font-size:clamp(17px,1.4vw,21px);line-height:1.22;}
-  .pk-options-1710{grid-template-rows:repeat(2,minmax(54px,1fr));gap:6px;}
-  .pk-choice-1710{min-height:54px;height:100%;max-height:76px;font-size:clamp(12px,.95vw,16px);}
+  .pk-options-1710{grid-template-rows:repeat(2,auto);grid-auto-rows:auto;align-content:start;gap:6px;}
+  .pk-choice-1710{min-height:50px;height:auto;max-height:68px;font-size:clamp(12px,.95vw,16px);}
   .pk-choice-1710.adaptShort{min-height:54px;max-height:60px;}
   .pk-choice-1710.adaptMedium{min-height:58px;max-height:66px;}
   .pk-choice-1710.adaptLong{min-height:62px;max-height:72px;}
@@ -319,14 +320,376 @@
   .pk-card-1710{gap:4px;padding:5px;grid-template-rows:minmax(22px,28px) minmax(38px,50px) minmax(0,1fr) minmax(30px,34px);}
   .pk-card-1710 h3{font-size:14px;}
   .pk-question-1710{min-height:38px;max-height:50px;font-size:clamp(14px,1.15vw,17px);line-height:1.16;}
-  .pk-options-1710{grid-template-rows:repeat(2,minmax(46px,1fr));gap:4px;}
-  .pk-choice-1710{min-height:46px;height:100%;max-height:64px;font-size:12px;padding:4px 8px;}
+  .pk-options-1710{grid-template-rows:repeat(2,auto);grid-auto-rows:auto;align-content:start;gap:4px;}
+  .pk-choice-1710{min-height:46px;height:auto;max-height:64px;font-size:12px;padding:4px 8px;}
   .pk-choice-1710.adaptShort{min-height:46px;max-height:52px;}
   .pk-choice-1710.adaptMedium{min-height:50px;max-height:56px;}
   .pk-choice-1710.adaptLong{min-height:54px;max-height:60px;}
   .pk-choice-1710.adaptTiny{min-height:56px;max-height:64px;}
   .pk-lock-row-1710 .btn,.pk-bottom-actions-1710 .btn{height:34px;font-size:12px;}
 }
+
+
+/* V27.0-A5.8.17.23 Battle Responsive Layout Engine: cross-device battle/Boss/PK layout, answer density, settlement stability. */
+:root{
+  --app-height:100vh;
+  --ka-vh:100vh;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-bottom-extra:12px;
+  --safe-bottom-effective:max(env(safe-area-inset-bottom,0px), var(--safe-bottom-extra,12px));
+  --battle-stage-h:42%;
+  --battle-question-h:50%;
+  --battle-bottom-h:48px;
+  --boss-stage-h:44%;
+  --boss-question-h:48%;
+  --boss-bottom-h:48px;
+  --boss-art-max-h:clamp(190px,30vh,320px);
+  --pk-stage-h:44%;
+  --pk-answer-h:calc(100% - var(--pk-stage-h) - var(--pk-bottom-h));
+  --pk-bottom-h:48px;
+  --pk-question-h:70px;
+  --pk-lock-h:36px;
+  --pk-choice-short-h:50px;
+  --pk-choice-medium-h:58px;
+  --pk-choice-long-h:66px;
+  --battle-choice-short-h:50px;
+  --battle-choice-medium-h:58px;
+  --battle-choice-long-h:66px;
+}
+body.battle-desktop-large{
+  --safe-bottom-extra:12px;
+  --battle-stage-h:45%; --battle-question-h:48%; --battle-bottom-h:52px;
+  --boss-stage-h:47%; --boss-question-h:46%; --boss-bottom-h:52px; --boss-art-max-h:clamp(220px,34vh,360px);
+  --pk-stage-h:48%; --pk-bottom-h:52px; --pk-answer-h:calc(100% - var(--pk-stage-h) - var(--pk-bottom-h));
+  --pk-question-h:76px; --pk-lock-h:38px;
+  --pk-choice-short-h:54px; --pk-choice-medium-h:62px; --pk-choice-long-h:72px;
+  --battle-choice-short-h:54px; --battle-choice-medium-h:62px; --battle-choice-long-h:72px;
+}
+body.battle-desktop-normal{
+  --safe-bottom-extra:12px;
+  --battle-stage-h:42%; --battle-question-h:50%; --battle-bottom-h:48px;
+  --boss-stage-h:43%; --boss-question-h:50%; --boss-bottom-h:48px; --boss-art-max-h:clamp(190px,30vh,320px);
+  --pk-stage-h:44%; --pk-bottom-h:48px; --pk-answer-h:calc(100% - var(--pk-stage-h) - var(--pk-bottom-h));
+  --pk-question-h:70px; --pk-lock-h:36px;
+  --pk-choice-short-h:50px; --pk-choice-medium-h:58px; --pk-choice-long-h:66px;
+  --battle-choice-short-h:50px; --battle-choice-medium-h:58px; --battle-choice-long-h:66px;
+}
+body.battle-whiteboard-safe{
+  --safe-bottom-extra:18px;
+  --battle-stage-h:36%; --battle-question-h:56%; --battle-bottom-h:46px;
+  --boss-stage-h:36%; --boss-question-h:56%; --boss-bottom-h:46px; --boss-art-max-h:clamp(150px,24vh,260px);
+  --pk-stage-h:36%; --pk-bottom-h:46px; --pk-answer-h:calc(100% - var(--pk-stage-h) - var(--pk-bottom-h));
+  --pk-question-h:66px; --pk-lock-h:36px;
+  --pk-choice-short-h:52px; --pk-choice-medium-h:60px; --pk-choice-long-h:68px;
+  --battle-choice-short-h:52px; --battle-choice-medium-h:60px; --battle-choice-long-h:68px;
+}
+body.battle-tablet-compact{
+  --safe-bottom-extra:22px;
+  --battle-stage-h:32%; --battle-question-h:60%; --battle-bottom-h:44px;
+  --boss-stage-h:32%; --boss-question-h:60%; --boss-bottom-h:44px; --boss-art-max-h:clamp(130px,22vh,230px);
+  --pk-stage-h:32%; --pk-bottom-h:44px; --pk-answer-h:calc(100% - var(--pk-stage-h) - var(--pk-bottom-h));
+  --pk-question-h:58px; --pk-lock-h:34px;
+  --pk-choice-short-h:46px; --pk-choice-medium-h:54px; --pk-choice-long-h:62px;
+  --battle-choice-short-h:46px; --battle-choice-medium-h:54px; --battle-choice-long-h:62px;
+}
+/* General/Boss battle responsive layout. */
+.battleA14{
+  height:var(--app-height)!important;
+  max-height:var(--app-height)!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-rows:var(--battle-stage-h) minmax(0,1fr)!important;
+}
+.battleA14 .battleStageA14{
+  min-height:0!important;
+  height:100%!important;
+  overflow:hidden!important;
+  align-items:end!important;
+  box-sizing:border-box!important;
+  padding-top:calc(54px + var(--safe-top,0px))!important;
+  padding-bottom:10px!important;
+}
+.battleA14 .battleQAA14{
+  min-height:0!important;
+  height:100%!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-rows:minmax(54px,auto) minmax(0,1fr) var(--battle-bottom-h)!important;
+  gap:8px!important;
+  padding:8px 6vw calc(6px + var(--safe-bottom-effective))!important;
+  box-sizing:border-box!important;
+}
+.battleA14 .questionA14{
+  min-height:54px!important;
+  max-height:86px!important;
+  overflow:hidden!important;
+  line-height:1.2!important;
+}
+.battleA14 .answersA14{
+  min-height:0!important;
+  height:auto!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(var(--battle-choice-medium-h),auto))!important;
+  align-content:start!important;
+  gap:8px!important;
+}
+.battleA14 .choiceA14{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  min-height:var(--battle-choice-medium-h)!important;
+  max-height:calc(var(--battle-choice-long-h) + 8px)!important;
+  overflow:hidden!important;
+  padding:6px 12px!important;
+  line-height:1.18!important;
+}
+.battleA14 .choiceA14.adaptShort,.battleA14 .choiceA14.battle-choice-short{min-height:var(--battle-choice-short-h)!important;max-height:calc(var(--battle-choice-short-h) + 6px)!important;}
+.battleA14 .choiceA14.adaptMedium,.battleA14 .choiceA14.battle-choice-medium{min-height:var(--battle-choice-medium-h)!important;max-height:calc(var(--battle-choice-medium-h) + 8px)!important;}
+.battleA14 .choiceA14.adaptLong,.battleA14 .choiceA14.battle-choice-long,.battleA14 .choiceA14.adaptTiny{min-height:var(--battle-choice-long-h)!important;max-height:calc(var(--battle-choice-long-h) + 10px)!important;}
+.battleA14 .battleActionA14{
+  height:var(--battle-bottom-h)!important;
+  min-height:0!important;
+  align-self:end!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+}
+.battleA14 .battleActionA14 .btn{height:calc(var(--battle-bottom-h) - 6px)!important;min-height:34px!important;}
+.battleA14 .battleHeroArt{max-height:clamp(140px,24vh,230px)!important;object-fit:contain!important;}
+.battleA14 .battleEnemyArt{max-height:clamp(140px,24vh,240px)!important;object-fit:contain!important;}
+.battleA14 .enemyA21.bossA21 .battleEnemyArt,.battleA14 .enemyA21.finalBossA21 .battleEnemyArt{max-height:var(--boss-art-max-h)!important;}
+.battleA14:has(.bossA21),.battleA14:has(.finalBossA21){grid-template-rows:var(--boss-stage-h) minmax(0,1fr)!important;}
+.battleA14:has(.bossA21) .battleQAA14,.battleA14:has(.finalBossA21) .battleQAA14{grid-template-rows:minmax(54px,auto) minmax(0,1fr) var(--boss-bottom-h)!important;}
+/* PK responsive layout. */
+.pkBattle1710{
+  height:var(--app-height)!important;
+  max-height:var(--app-height)!important;
+  display:grid!important;
+  grid-template-rows:var(--pk-stage-h) minmax(0,var(--pk-answer-h)) var(--pk-bottom-h)!important;
+  overflow:hidden!important;
+}
+.pkBattle1710::before{
+  background:linear-gradient(180deg,
+    rgba(0,18,34,.08) 0,
+    rgba(0,18,34,.12) calc(var(--pk-stage-h) - 1px),
+    rgba(232,248,255,.72) var(--pk-stage-h),
+    rgba(232,248,255,.92) 100%)!important;
+}
+.pk-battle-stage-1710{
+  height:100%!important;
+  min-height:0!important;
+  padding-top:calc(54px + var(--safe-top,0px))!important;
+  padding-bottom:12px!important;
+  overflow:hidden!important;
+}
+.pk-player-art-1710{
+  max-height:min(34vh,calc(var(--pk-stage-h) - 82px),340px)!important;
+  max-width:min(31vw,390px)!important;
+}
+.pk-question-layer-1710{
+  height:100%!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  align-items:stretch!important;
+  align-content:stretch!important;
+  padding:6px clamp(12px,1.4vw,20px) 4px!important;
+  box-sizing:border-box!important;
+}
+.pk-card-1710{
+  height:100%!important;
+  min-height:0!important;
+  display:grid!important;
+  grid-template-rows:minmax(26px,30px) var(--pk-question-h) minmax(0,1fr) var(--pk-lock-h)!important;
+  gap:5px!important;
+  padding:6px!important;
+  overflow:hidden!important;
+}
+.pk-question-1710{
+  min-height:0!important;
+  max-height:var(--pk-question-h)!important;
+  height:100%!important;
+  padding:5px 10px!important;
+  overflow:hidden!important;
+}
+.pk-options-1710{
+  min-height:0!important;
+  height:100%!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(var(--pk-choice-medium-h),1fr))!important;
+  gap:6px 8px!important;
+  align-content:stretch!important;
+  align-items:stretch!important;
+}
+.pk-choice-1710{
+  min-height:var(--pk-choice-medium-h)!important;
+  max-height:none!important;
+  height:100%!important;
+  padding:6px 10px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  line-height:1.18!important;
+}
+.pk-choice-1710.adaptShort,.pk-choice-1710.pk-choice-short,.pk-choice-1710.choice-short{min-height:var(--pk-choice-short-h)!important;}
+.pk-choice-1710.adaptMedium,.pk-choice-1710.pk-choice-medium,.pk-choice-1710.choice-medium{min-height:var(--pk-choice-medium-h)!important;}
+.pk-choice-1710.adaptLong,.pk-choice-1710.pk-choice-long,.pk-choice-1710.adaptTiny,.pk-choice-1710.pk-choice-tiny,.pk-choice-1710.choice-long{min-height:var(--pk-choice-long-h)!important;}
+.pk-lock-row-1710{
+  min-height:0!important;
+  height:var(--pk-lock-h)!important;
+  align-items:center!important;
+}
+.pk-bottom-actions-1710{
+  height:var(--pk-bottom-h)!important;
+  min-height:0!important;
+  margin:0 auto var(--safe-bottom-effective)!important;
+  align-self:end!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+}
+.pk-bottom-actions-1710 .btn{height:calc(var(--pk-bottom-h) - 6px)!important;min-height:34px!important;}
+body.battle-whiteboard-safe .pk-player-art-1710,body.battle-tablet-compact .pk-player-art-1710{max-height:min(27vh,calc(var(--pk-stage-h) - 72px),250px)!important;}
+body.battle-whiteboard-safe .pk-stage-hud-1710,body.battle-tablet-compact .pk-stage-hud-1710{transform:scale(.9);}
+body.battle-whiteboard-safe .pk-stage-side-1710.p2 .pk-stage-hud-1710,body.battle-tablet-compact .pk-stage-side-1710.p2 .pk-stage-hud-1710{transform-origin:top right;}
+body.battle-whiteboard-safe .pk-stage-side-1710.p1 .pk-stage-hud-1710,body.battle-tablet-compact .pk-stage-side-1710.p1 .pk-stage-hud-1710{transform-origin:top left;}
+
+
+/* V27.0-A5.8.17.23 desktop/whiteboard split: desktop cards wrap content; whiteboard/tablet cards fill safe answer region. */
+body.battle-desktop-large .pkBattle1710,
+body.battle-desktop-normal .pkBattle1710{
+  grid-template-rows:minmax(0,1fr) auto var(--pk-bottom-h)!important;
+}
+body.battle-desktop-large .pk-question-layer-1710,
+body.battle-desktop-normal .pk-question-layer-1710{
+  height:auto!important;
+  align-self:end!important;
+  align-items:start!important;
+  align-content:start!important;
+  padding:6px clamp(12px,1.4vw,20px) 4px!important;
+}
+body.battle-desktop-large .pk-card-1710,
+body.battle-desktop-normal .pk-card-1710{
+  height:auto!important;
+  max-height:min(330px,calc(var(--app-height) - 300px))!important;
+  align-self:start!important;
+  grid-template-rows:minmax(26px,30px) var(--pk-question-h) auto var(--pk-lock-h)!important;
+}
+body.battle-desktop-large .pk-options-1710,
+body.battle-desktop-normal .pk-options-1710{
+  height:auto!important;
+  grid-template-rows:repeat(2,auto)!important;
+  grid-auto-rows:auto!important;
+  align-content:start!important;
+  align-items:start!important;
+}
+body.battle-desktop-large .pk-choice-1710,
+body.battle-desktop-normal .pk-choice-1710{
+  height:auto!important;
+  max-height:calc(var(--pk-choice-long-h) + 10px)!important;
+}
+body.battle-desktop-large .pk-choice-1710.pk-choice-short,
+body.battle-desktop-normal .pk-choice-1710.pk-choice-short,
+body.battle-desktop-large .pk-choice-1710.choice-short,
+body.battle-desktop-normal .pk-choice-1710.choice-short,
+body.battle-desktop-large .pk-choice-1710.adaptShort,
+body.battle-desktop-normal .pk-choice-1710.adaptShort{min-height:var(--pk-choice-short-h)!important;max-height:calc(var(--pk-choice-short-h) + 8px)!important;}
+body.battle-desktop-large .pk-choice-1710.pk-choice-medium,
+body.battle-desktop-normal .pk-choice-1710.pk-choice-medium,
+body.battle-desktop-large .pk-choice-1710.choice-medium,
+body.battle-desktop-normal .pk-choice-1710.choice-medium,
+body.battle-desktop-large .pk-choice-1710.adaptMedium,
+body.battle-desktop-normal .pk-choice-1710.adaptMedium{min-height:var(--pk-choice-medium-h)!important;max-height:calc(var(--pk-choice-medium-h) + 8px)!important;}
+body.battle-desktop-large .pk-choice-1710.pk-choice-long,
+body.battle-desktop-normal .pk-choice-1710.pk-choice-long,
+body.battle-desktop-large .pk-choice-1710.choice-long,
+body.battle-desktop-normal .pk-choice-1710.choice-long,
+body.battle-desktop-large .pk-choice-1710.adaptLong,
+body.battle-desktop-normal .pk-choice-1710.adaptLong,
+body.battle-desktop-large .pk-choice-1710.adaptTiny,
+body.battle-desktop-normal .pk-choice-1710.adaptTiny{min-height:var(--pk-choice-long-h)!important;max-height:calc(var(--pk-choice-long-h) + 10px)!important;}
+body.battle-desktop-large .pk-bottom-actions-1710,
+body.battle-desktop-normal .pk-bottom-actions-1710{
+  align-self:start!important;
+  margin:4px auto var(--safe-bottom-effective)!important;
+}
+body.battle-whiteboard-safe .pkBattle1710,
+body.battle-tablet-compact .pkBattle1710{
+  grid-template-rows:var(--pk-stage-h) minmax(0,var(--pk-answer-h)) var(--pk-bottom-h)!important;
+}
+body.battle-whiteboard-safe .pk-question-layer-1710,
+body.battle-tablet-compact .pk-question-layer-1710{height:100%!important;align-items:stretch!important;align-content:stretch!important;}
+body.battle-whiteboard-safe .pk-card-1710,
+body.battle-tablet-compact .pk-card-1710{height:100%!important;max-height:none!important;grid-template-rows:minmax(24px,30px) var(--pk-question-h) minmax(0,1fr) var(--pk-lock-h)!important;}
+body.battle-whiteboard-safe .pk-options-1710,
+body.battle-tablet-compact .pk-options-1710{height:100%!important;grid-template-rows:repeat(2,minmax(var(--pk-choice-medium-h),1fr))!important;align-content:stretch!important;align-items:stretch!important;}
+
+
+
+/* V27.0-A5.8.17.23 desktop battle cards wrap content; whiteboard/tablet keep safe fill. */
+body.battle-desktop-large .battleA14,
+body.battle-desktop-normal .battleA14{
+  grid-template-rows:minmax(0,1fr) auto!important;
+}
+body.battle-desktop-large .battleQAA14,
+body.battle-desktop-normal .battleQAA14{
+  height:auto!important;
+  align-self:end!important;
+  grid-template-rows:auto auto var(--battle-bottom-h)!important;
+  padding-top:8px!important;
+  padding-bottom:calc(8px + var(--safe-bottom-effective))!important;
+}
+body.battle-desktop-large .answersA14,
+body.battle-desktop-normal .answersA14{
+  height:auto!important;
+  grid-template-rows:repeat(2,auto)!important;
+  align-content:start!important;
+  align-items:start!important;
+}
+body.battle-desktop-large .choiceA14,
+body.battle-desktop-normal .choiceA14{
+  height:auto!important;
+  min-height:var(--battle-choice-medium-h)!important;
+  max-height:calc(var(--battle-choice-long-h) + 10px)!important;
+}
+body.battle-whiteboard-safe .battleA14,
+body.battle-tablet-compact .battleA14{
+  grid-template-rows:var(--battle-stage-h) minmax(0,1fr)!important;
+}
+body.battle-whiteboard-safe .battleQAA14,
+body.battle-tablet-compact .battleQAA14{
+  height:100%!important;
+  grid-template-rows:minmax(48px,auto) minmax(0,1fr) var(--battle-bottom-h)!important;
+}
+body.battle-whiteboard-safe .answersA14,
+body.battle-tablet-compact .answersA14{
+  height:100%!important;
+  grid-template-rows:repeat(2,minmax(var(--battle-choice-medium-h),1fr))!important;
+  align-content:stretch!important;
+}
+
+/* Result / settlement stable overlay. */
+.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay{
+  position:fixed!important;inset:0!important;overflow:hidden!important;z-index:100500!important;contain:layout paint!important;overscroll-behavior:none!important;
+}
+.ka-a573-card,.ka-a53-card,.pkResultCardA57,.resultCard,.pkResultCard,.settlementCard{
+  max-height:calc(var(--app-height,100vh) - 48px)!important;
+  min-height:min(560px,calc(var(--app-height,100vh) - 64px))!important;
+  display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;overflow:hidden!important;box-sizing:border-box!important;
+}
+.ka-a573-body,.ka-a53-body,.pkResultBodyA57,.resultBody,.pkResultBody,.settlementBody{min-height:0!important;overflow:auto!important;overscroll-behavior:contain!important;}
+.ka-a573-actions,.ka-a53-actions,.pkResultActionsA57,.resultActions,.pkResultActions,.settlementActions{flex-shrink:0!important;}
+.resultRewardIcon,.resultBadge,.resultStar,.resultChest,.resultTrophy,.rewardBadgeA573,.starIconA573,.chestIconA573,.trophyIconA573{width:72px!important;height:72px!important;object-fit:contain!important;flex:0 0 auto!important;}
+body.result-open{overflow:hidden!important;}
+
 
 
 
@@ -4862,6 +5225,10 @@ img{max-width:100%;}
 @media(max-width:900px),(max-height:620px){#app .skipA58152{height:40px!important;font-size:16px!important;min-width:82px!important;padding:6px 14px!important;}#app .introEnterA58152{height:48px!important;font-size:19px!important;min-width:150px!important;bottom:clamp(16px,4vh,44px)!important;right:clamp(18px,3.2vw,54px)!important;}}
 </style>
 
+
+
+
+
 </head>
 <body><div id="app" class="app"></div><div id="toast" class="toast"></div><div id="orientationHint" aria-live="polite">請將 iPad 轉為橫向使用</div>
 <script>
@@ -5214,7 +5581,7 @@ function pushAnd(fn){state.history.push(state.screen); fn();}
 function goHome(){state.history=[]; state.mode=null; state.clearProgressConfirm=false; renderTitle();}
 function back(){const prev=state.history.pop(); if(!prev) return renderTitle(); route(prev);}
 function route(name){({intro:renderIntro,title:renderTitle,mode:renderMode,grade:renderGrade,role:renderRoleSelect,world:renderWorldMap,kingdom:renderKingdomMap,teacher:renderTeacher,codex:renderCodex,records:renderRecords,review:renderReview,settings:renderSettings,pksetup:renderPKSetup}[name]||renderTitle)();}
-function createBgmAudio(){const audio=document.createElement('audio');audio.loop=true;audio.volume=.35;audio.preload='auto';BGM_CANDIDATES.forEach(src=>{const source=document.createElement('source');source.src=src;const ext=src.split('.').pop().toLowerCase();source.type=ext==='mp3'?'audio/mpeg':(ext==='m4a'?'audio/mp4':'audio/ogg');audio.appendChild(source);});return audio;}
+function createBgmAudio(){const audio=document.createElement('audio');audio.loop=true;audio.volume=.35;audio.preload='metadata';BGM_CANDIDATES.forEach(src=>{const source=document.createElement('source');source.src=src;const ext=src.split('.').pop().toLowerCase();source.type=ext==='mp3'?'audio/mpeg':(ext==='m4a'?'audio/mp4':'audio/ogg');audio.appendChild(source);});return audio;}
 function toggleMusic(){try{if(!state.audio){state.audio=createBgmAudio();} const btn=document.querySelector('[data-action="music"]'); if(state.music){state.audio.pause();state.music=false;if(btn)btn.textContent='♪';toast('音樂已關閉');}else{state.audio.play().then(()=>{state.music=true;if(btn)btn.textContent='♫';toast('音樂已開啟');}).catch(()=>toast('音樂無法播放，此裝置可能不支援目前音樂格式'));}}catch(e){toast('音樂載入失敗');}}
 async function fullscreen(){const el=document.documentElement;try{if(document.fullscreenElement){if(document.exitFullscreen) await document.exitFullscreen(); else if(document.webkitExitFullscreen) document.webkitExitFullscreen();return;}const req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){toast('此裝置不支援網頁全螢幕，請將 iPad 橫向使用。');return;}const result=req.call(el);if(result&&typeof result.then==='function') await result;}catch(e){toast('全螢幕無法啟動，請將 iPad 橫向使用。');}}
 function renderIntro(step=0){
@@ -5558,6 +5925,21 @@ function currentQ(){const q=state.battle.questions[state.battle.idx]; if(q&&q.mo
 function optionPlainLength(op){return String(op??'').replace(/<[^>]*>/g,'').replace(/\s+/g,'').length}
 function adaptiveOptionClass(options){const arr=options||[];const max=Math.max(0,...arr.map(optionPlainLength));const total=arr.reduce((sum,op)=>sum+optionPlainLength(op),0);if(max>=24||total>=80)return 'adaptiveLongSet';if(max>=14||total>=50)return 'adaptiveMedium';return 'adaptiveShort'}
 function adaptiveTextClass(op){const len=optionPlainLength(op);if(len>=38)return 'adaptTiny';if(len>=24)return 'adaptLong';if(len>=14)return 'adaptMedium';return 'adaptShort'}
+function pkChoiceDensityClassA5822(op){const len=optionPlainLength(op);if(len>=38)return 'pk-choice-tiny';if(len>=24)return 'pk-choice-long';if(len>=14)return 'pk-choice-medium';return 'pk-choice-short'}
+
+function getChoiceDensityClassA5823(text){
+  const len=optionPlainLength(text);
+  if(len<=6)return 'choice-short battle-choice-short';
+  if(len<=16)return 'choice-medium battle-choice-medium';
+  return 'choice-long battle-choice-long';
+}
+function getPkChoiceDensityClassA5823(text){
+  const len=optionPlainLength(text);
+  if(len<=6)return 'pk-choice-short choice-short';
+  if(len<=16)return 'pk-choice-medium choice-medium';
+  return 'pk-choice-long choice-long';
+}
+
 
 function renderBattle(){
  const b=state.battle,q=currentQ(),baseM=state.battle?.monsterSnapshot||state.battle?.monster||state.stage?.monster||monsterForStage(state.subject,state.stage?.unit,state.stage?.cat,0,false),r=roleById(state.selectedRole||state.roleId||state.role||'knight'),a=activeSkillOf(r),p=passiveSkillOf(r);
@@ -5585,7 +5967,7 @@ function renderBattle(){
     </div>
     <div class="battleQAA14">
       <div class="questionA14"><span class="questionTextInnerA24">${formatQuestionText(q.text)}</span></div>
-      <div class="answersA14 ${optClass}">${opts.map((op,i)=>`<button class="choiceA14 ${adaptiveTextClass(op)}" data-action="battle-answer" data-answer="${escapeAttr(op)}" ${optionDisabledByAssist(assist,op)?'disabled style="opacity:.42;filter:grayscale(1)"':''}><span class="letter">${'ABCD'[i]}</span><span class="optionTextA20">${escapeHtml(op)}</span></button>`).join('')}</div>
+      <div class="answersA14 ${optClass}">${opts.map((op,i)=>`<button class="choiceA14 ${adaptiveTextClass(op)} ${getChoiceDensityClassA5823(op)}" data-action="battle-answer" data-answer="${escapeAttr(op)}" ${optionDisabledByAssist(assist,op)?'disabled style="opacity:.42;filter:grayscale(1)"':''}><span class="letter">${'ABCD'[i]}</span><span class="optionTextA20">${escapeHtml(op)}</span></button>`).join('')}</div>
       <div class="battleActionA14"><button class="btn secondary" data-action="hint">提示</button><button class="btn secondary" data-action="exit-battle">離開</button></div>
     </div>
   </div>`,battleBg(state.subject));
@@ -5654,7 +6036,7 @@ function renderPKBattle(){
  const enbar=(en,role)=>`<div class="bar"><div class="enfill" style="width:${Math.max(0,Math.min(100,en))/skillCost(role)*100}%"></div></div>`;
  const p1Skill=renderSkillHudA5812({mode:'pk',player:'p1',role:p1r,en:pk.p1.en,maxEn:skillCost(p1r),locked:!!pk.p1.locked||!!pk.result,canUse:pk.p1.en>=skillCost(p1r)&&!pk.p1.locked&&!pk.result,activeSkill:activeSkillOf(p1r),passiveSkill:passiveSkillOf(p1r),statusHtml:pkStateBadgesA5812(pk,'p1',p1r)});
  const p2Skill=renderSkillHudA5812({mode:'pk',player:'p2',role:p2r,en:pk.p2.en,maxEn:skillCost(p2r),locked:!!pk.p2.locked||!!pk.result,canUse:pk.p2.en>=skillCost(p2r)&&!pk.p2.locked&&!pk.result,activeSkill:activeSkillOf(p2r),passiveSkill:passiveSkillOf(p2r),statusHtml:pkStateBadgesA5812(pk,'p2',p2r)});
- const qPanel=(p,label,q,role)=>{const opts=ensureQuestionDisplayOptions(q);const assist=pkAssistState(pk,p);const optClass=adaptiveOptionClass(opts);const qTextClass=pkQuestionTextClassA5820(q&&q.text);return `<section class="pk-card-1710"><h3>${label}｜${pk[p].locked?'已鎖定':'作答中'}</h3><div class="pk-question-1710"><span class="questionTextInnerA24 ${qTextClass}">${formatQuestionText(q.text)}</span></div><div class="pk-options-1710 ${optClass}">${opts.map((op,i)=>`<button class="pk-choice-1710 ${adaptiveTextClass(op)} ${pk[p].ans===op?'selected':''}" data-action="pk-answer" data-player="${p}" data-answer="${escapeAttr(op)}" ${pk[p].locked||pk.result||optionDisabledByAssist(assist,op)?'disabled':''} ${optionDisabledByAssist(assist,op)?'style="opacity:.42;filter:grayscale(1)"':''}><span class="letter">${'ABCD'[i]}</span><span class="optionTextA20">${escapeHtml(op)}</span></button>`).join('')}</div><div class="pk-lock-row-1710"><button class="btn" data-action="pk-lock" data-player="${p}" ${pk[p].locked||pk.result?'disabled':''}>${pk[p].locked?'已鎖定':'鎖定答案'}</button><span>${pk[p].locked?'等待對方與判定':'選好後鎖定'}</span></div></section>`};
+ const qPanel=(p,label,q,role)=>{const opts=ensureQuestionDisplayOptions(q);const assist=pkAssistState(pk,p);const optClass=adaptiveOptionClass(opts);const qTextClass=pkQuestionTextClassA5820(q&&q.text);return `<section class="pk-card-1710"><h3>${label}｜${pk[p].locked?'已鎖定':'作答中'}</h3><div class="pk-question-1710"><span class="questionTextInnerA24 ${qTextClass}">${formatQuestionText(q.text)}</span></div><div class="pk-options-1710 ${optClass}">${opts.map((op,i)=>`<button class="pk-choice-1710 ${adaptiveTextClass(op)} ${pkChoiceDensityClassA5822(op)} ${getPkChoiceDensityClassA5823(op)} ${pk[p].ans===op?'selected':''}" data-action="pk-answer" data-player="${p}" data-answer="${escapeAttr(op)}" ${pk[p].locked||pk.result||optionDisabledByAssist(assist,op)?'disabled':''} ${optionDisabledByAssist(assist,op)?'style="opacity:.42;filter:grayscale(1)"':''}><span class="letter">${'ABCD'[i]}</span><span class="optionTextA20">${escapeHtml(op)}</span></button>`).join('')}</div><div class="pk-lock-row-1710"><button class="btn" data-action="pk-lock" data-player="${p}" ${pk[p].locked||pk.result?'disabled':''}>${pk[p].locked?'已鎖定':'鎖定答案'}</button><span>${pk[p].locked?'等待對方與判定':'選好後鎖定'}</span></div></section>`};
  setScreen('pkbattle',`
   <div class="pkBattle1710" style="background-image:url('${IMG.battlePK}')">
     <div class="pk-battle-stage-1710">
@@ -6319,7 +6701,7 @@ const KA_A50_AUDIO_MANAGER={
   syncSliders(){try{document.querySelectorAll('[data-a50-volume]').forEach(x=>{x.value=Math.round(this.volume*100)})}catch(e){}},
   toggle(){this.setEnabled(!this.enabled,true)},
   setEnabled(on,fromUser){this.enabled=!!on;this.save();try{if(typeof state!=='undefined')state.music=this.enabled}catch(e){};a50UpdateMusicButtons(this.enabled);if(this.enabled){if(fromUser)this.unlock();this.playBgmForScreen((typeof state!=='undefined')?state.screen:'title');a50Toast('音樂已開啟')}else{this.stopBgm(360);a50Toast('音樂已關閉')}},
-  createAudio(src){if(!a50Has(src))return null;const a=new Audio(src);a.loop=true;a.preload='auto';a.volume=0;return a;},
+  createAudio(src){if(!a50Has(src))return null;const a=new Audio(src);a.loop=true;a.preload='metadata';a.volume=0;return a;},
   ramp(audio,to,ms,done){if(!audio){if(done)done();return}clearInterval(this.fadeTimer);const from=Number(audio.volume)||0;const steps=Math.max(1,Math.ceil((ms||300)/40));let i=0;this.fadeTimer=setInterval(()=>{i++;const t=i/steps;audio.volume=Math.max(0,Math.min(1,from+(to-from)*t));if(i>=steps){clearInterval(this.fadeTimer);this.fadeTimer=null;audio.volume=Math.max(0,Math.min(1,to));if(done)done();}},40)},
   playBgmForScreen(screen){const scene=a50ScreenScene(screen);this.currentScene=screen||scene;if(!this.enabled||!this.unlocked){a50UpdateMusicButtons(this.enabled);return}const src=A50_BGM[scene]||A50_BGM.default;if(!a50Has(src)){a50Toast('此場景尚未配置音檔，已保持靜音');return}if(this.current&&this.currentSrc===src&&!this.current.paused){return}const old=this.current;const next=this.createAudio(src);if(!next)return;this.current=next;this.currentSrc=src;try{if(typeof state!=='undefined')state.audio=next}catch(e){};next.play().then(()=>{this.ramp(next,this.volume,520)}).catch(()=>{a50Toast('請先點一下畫面或音樂鍵以啟動聲音')});if(old){this.ramp(old,0,360,()=>{try{old.pause();old.currentTime=0}catch(e){}})}a50UpdateMusicButtons(true)},
   stopBgm(ms){const old=this.current;this.current=null;this.currentSrc='';if(old){this.ramp(old,0,ms||300,()=>{try{old.pause();old.currentTime=0}catch(e){}})}},
@@ -6404,7 +6786,7 @@ function a51MakeAudio(entry, loop){
   const list=Array.isArray(entry.sources)?entry.sources:(typeof entry==='string'?[{src:entry,type:a51TypeFor(entry)}]:[]);
   if(!list.length)return null;
   const a=document.createElement('audio');
-  a.preload='auto';
+  a.preload='metadata';
   a.loop=!!loop;
   a.volume=0;
   list.forEach(function(s){
@@ -6485,7 +6867,7 @@ function a51Patch(){
       let audio=this.a51SfxCache[key];
       if(!audio){
         audio=new Audio(srcObj.src);
-        audio.preload='auto';
+        audio.preload='metadata';
         audio.volume=Math.max(0,Math.min(1,entry.volume||this.sfxVolume||.42));
         this.a51SfxCache[key]=audio;
       }
@@ -6700,7 +7082,7 @@ function install(){
         const srcObj=entry.sources&&entry.sources[0];
         if(srcObj&&srcObj.src){
           const inst=new Audio(srcObj.src);
-          inst.preload='auto';
+          inst.preload='none';
           inst.volume=finalVol;
           inst.play().catch(()=>{if(ev!=='button_click' && this.playFallbackTone)this.playFallbackTone(ev);});
           return;
@@ -7028,7 +7410,7 @@ function makeAudio(entry,loop){
   const list=Array.isArray(entry.sources)?entry.sources:[];
   if(!list.length)return null;
   const a=document.createElement('audio');
-  a.preload='auto';
+  a.preload='metadata';
   a.loop=loop!==false;
   a.volume=0;
   a.muted=false;
@@ -12920,7 +13302,7 @@ function bgmInfoA58163(screen){const scene=normalizeSceneA58163(screen||(window.
 function updateMusicButtonsA58163(on){try{document.querySelectorAll('[data-action="music"],[data-action="settings-music"],[data-action="teacher-music"]').forEach(btn=>{if(btn.dataset.action==='music'){btn.textContent=on?'♫':'♪';btn.classList.toggle('a50Muted',!on);}else{btn.textContent=on?'關閉音樂':'開啟音樂';}});}catch(e){}}
 function saveAudioStateA58163(m){try{localStorage.setItem('ka_a50_audio',JSON.stringify({enabled:!!m.enabled,volume:Number(m.volume||.32)}));}catch(e){}}
 function fadeAudioA58163(audio,to,ms,done){if(!audio){if(done)done();return;}const from=Number(audio.volume)||0;const dur=Math.max(80,Number(ms)||300);const t0=performance.now();audio.__kaA58163FadeToken=(audio.__kaA58163FadeToken||0)+1;const token=audio.__kaA58163FadeToken;function step(t){if(audio.__kaA58163FadeToken!==token)return;const p=Math.min(1,(t-t0)/dur);const v=from+(to-from)*p;try{audio.volume=Math.max(0,Math.min(1,v));}catch(e){}if(p<1){requestAnimationFrame(step);}else{try{audio.volume=Math.max(0,Math.min(1,to));}catch(e){}if(done)done();}}requestAnimationFrame(step);}
-function makeAudioA58163(src,loop){const a=document.createElement('audio');a.preload='auto';a.loop=!!loop;a.volume=0;a.dataset.kaBgm=loop?'1':'0';a.dataset.a58163Src=src;const source=document.createElement('source');source.src=src;source.type=extTypeA58163(src);a.appendChild(source);return a;}
+function makeAudioA58163(src,loop){const a=document.createElement('audio');a.preload='metadata';a.loop=!!loop;a.volume=0;a.dataset.kaBgm=loop?'1':'0';a.dataset.a58163Src=src;const source=document.createElement('source');source.src=src;source.type=extTypeA58163(src);a.appendChild(source);return a;}
 function toneFallbackA58163(name){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=(window.__kaA58163Ctx||(window.__kaA58163Ctx=new C()));if(ctx.state==='suspended')ctx.resume();const freq={button_click:520,answer_correct:880,answer_wrong:180,attack_slash:660,fireball:420,spell_cast:740,magic_hit:720,player_hit:150,monster_die:260,victory:1040,answer_lock:480,arrow_shot:620}[name]||520;const now=ctx.currentTime;const osc=ctx.createOscillator();const gain=ctx.createGain();osc.type=(name==='answer_wrong'||name==='player_hit'||name==='monster_die')?'triangle':'sine';osc.frequency.setValueAtTime(freq,now);if(name==='victory'||name==='spell_cast')osc.frequency.exponentialRampToValueAtTime(freq*1.35,now+.12);if(name==='answer_wrong'||name==='player_hit')osc.frequency.exponentialRampToValueAtTime(Math.max(80,freq*.55),now+.16);gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.035,now+.014);gain.gain.exponentialRampToValueAtTime(.0001,now+.18);osc.connect(gain);gain.connect(ctx.destination);osc.start(now);osc.stop(now+.2);}catch(e){} }
 function patchManagerA58163(){
   let m=window.KA_A50_AUDIO_MANAGER;
@@ -12938,7 +13320,7 @@ function patchManagerA58163(){
   m.playBgmForScreen=function(screen){const info=bgmInfoA58163(screen);this.currentScene=screen||info.scene;this.currentBgmScene=info.scene;this.currentBgmKey=info.key;if(!this.enabled||!this.unlocked){updateMusicButtonsA58163(this.enabled);return info;}const src=info.src;if(this.current&&this.currentSrc===src&&!this.current.paused)return info;const old=this.current;const next=makeAudioA58163(src,true);this.current=next;this.currentSrc=src;this.currentBgmSrc=src;try{if(window.state){state.audio=next;state.music=!!this.enabled;state.bgmSceneA58163=info;}}catch(e){}const targetVol=Math.max(0,Math.min(1,info.volume));next.play().then(()=>{fadeAudioA58163(next,targetVol,620);}).catch(()=>{try{if(typeof toast==='function')toast('請先點一下畫面或音樂鍵以啟動聲音');}catch(e){}});if(old&&old!==next){fadeAudioA58163(old,0,420,()=>{try{old.pause();old.currentTime=0;old.remove&&old.remove();}catch(e){}});}updateMusicButtonsA58163(true);return info;};
   m.stopBgm=function(ms){const old=this.current;this.current=null;this.currentSrc='';this.currentBgmSrc='';if(old){fadeAudioA58163(old,0,ms||300,()=>{try{old.pause();old.currentTime=0;old.remove&&old.remove();}catch(e){}});}updateMusicButtonsA58163(false);};
   m.onScreen=function(screen){const info=this.playBgmForScreen(screen);setTimeout(()=>{try{this.enhanceAudioUI();}catch(e){}},0);return info;};
-  m.playSfx=function(name){if(!this.enabled||!this.unlocked)return false;const key=SFX_ALIAS_A58163[String(name||'')]||String(name||'button_click');const src=SFX_TRACKS_A58163[key]||SFX_TRACKS_A58163.button_click;const now=Date.now();const gap=SFX_THROTTLE_A58163[key]||180;const last=this.a58163LastSfx[key]||0;if(now-last<gap)return false;const pr=SFX_PRIORITY_A58163[key]||20;const ps=this.a58163PriorityState||{until:0,priority:0,name:''};if(now<ps.until && pr<ps.priority)return false;this.a58163LastSfx[key]=now;this.a58163PriorityState={until:now+Math.max(90,Math.min(420,gap)),priority:pr,name:key};try{let base=this.a58163SfxCache[src];if(!base){base=new Audio(src);base.preload='auto';base.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58163[key]||.24)*(this.sfxMasterScale||1)));this.a58163SfxCache[src]=base;}const inst=base.cloneNode(true);inst.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58163[key]||.24)*(this.sfxMasterScale||1)));inst.play().catch(()=>toneFallbackA58163(key));setTimeout(()=>{try{inst.remove&&inst.remove();}catch(e){}},2800);this.lastSfxA58163={input:name,key,src,time:now};return true;}catch(e){toneFallbackA58163(key);return false;}};
+  m.playSfx=function(name){if(!this.enabled||!this.unlocked)return false;const key=SFX_ALIAS_A58163[String(name||'')]||String(name||'button_click');const src=SFX_TRACKS_A58163[key]||SFX_TRACKS_A58163.button_click;const now=Date.now();const gap=SFX_THROTTLE_A58163[key]||180;const last=this.a58163LastSfx[key]||0;if(now-last<gap)return false;const pr=SFX_PRIORITY_A58163[key]||20;const ps=this.a58163PriorityState||{until:0,priority:0,name:''};if(now<ps.until && pr<ps.priority)return false;this.a58163LastSfx[key]=now;this.a58163PriorityState={until:now+Math.max(90,Math.min(420,gap)),priority:pr,name:key};try{let base=this.a58163SfxCache[src];if(!base){base=new Audio(src);base.preload='none';base.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58163[key]||.24)*(this.sfxMasterScale||1)));this.a58163SfxCache[src]=base;}const inst=base.cloneNode(true);inst.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58163[key]||.24)*(this.sfxMasterScale||1)));inst.play().catch(()=>toneFallbackA58163(key));setTimeout(()=>{try{inst.remove&&inst.remove();}catch(e){}},2800);this.lastSfxA58163={input:name,key,src,time:now};return true;}catch(e){toneFallbackA58163(key);return false;}};
   m.enhanceAudioUI=function(){try{const existing=document.querySelector('.a50AudioPanel');if(existing){const mini=existing.querySelector('.a50AudioMini');if(mini)mini.textContent='A5.8.16.3 已接入 assets/audio BGM/SFX；支援分場景音樂、音效優先級與節流。';return;}const target=document.querySelector('.settingsGridA21')||document.querySelector('.teacherActionRowA27');if(!target)return;const panel=document.createElement('div');panel.className='a50AudioPanel';panel.innerHTML='<span class="a50AudioBadge">A5.8.16.3 音訊</span><label>音量 <input type="range" min="0" max="100" step="1" data-a50-volume value="'+Math.round((this.volume||.32)*100)+'"></label><div class="a50AudioRow"><button class="btn secondary" data-a50-sfx="answer_correct">測試答對</button><button class="btn secondary" data-a50-sfx="answer_wrong">測試答錯</button><button class="btn secondary" data-a50-sfx="victory">測試勝利</button></div><div class="a50AudioMini">A5.8.16.3 已接入 assets/audio BGM/SFX；支援分場景音樂、音效優先級與節流。</div>';target.insertAdjacentElement('afterend',panel);}catch(e){}};
   m.audit=function(){return window.KA_A58163_audioRuntimeAudit?window.KA_A58163_audioRuntimeAudit():{version:VERSION_A58163};};
   try{if(window.state){state.music=!!m.enabled;state.audio=m.current||null;}}catch(e){}updateMusicButtonsA58163(!!m.enabled);return m;
@@ -13687,7 +14069,7 @@ document.addEventListener('click',function(ev){const el=ev.target&&ev.target.clo
 function stopLegacyAudioA58176(){try{if(state&&state.audio&&state.audio.pause)state.audio.pause();}catch(e){}try{const m=window.KA_A50_AUDIO_MANAGER;if(m&&m.current&&m.current.pause&&m.current.dataset.a58176!=='1')m.current.pause();}catch(e){}}
 const BGM_A58176={intro:'assets/audio/bgm/intro_theme.ogg',title:'assets/audio/bgm/title_theme.ogg',mode:'assets/audio/bgm/title_theme.ogg',grade:'assets/audio/bgm/title_theme.ogg',role:'assets/audio/bgm/title_theme.ogg',world:'assets/audio/bgm/world_map.ogg',kingdom:'assets/audio/bgm/world_map.ogg',battle:'assets/audio/bgm/battle_normal.ogg',boss:'assets/audio/bgm/battle_boss.ogg',pksetup:'assets/audio/bgm/battle_pk.ogg',pkbattle:'assets/audio/bgm/battle_pk.ogg',codex:'assets/audio/bgm/world_map.ogg',review:'assets/audio/bgm/world_map.ogg',teacher:'assets/audio/bgm/world_map.ogg',temple:'assets/audio/bgm/world_map.ogg',default:'assets/audio/bgm/title_theme.ogg'};
 const SFX_A58176={answer_correct:'assets/audio/sfx/sfx_answer_correct.ogg',answer_wrong:'assets/audio/sfx/sfx_answer_wrong.ogg',answer_lock:'assets/audio/sfx/sfx_answer_lock.ogg',spell_cast:'assets/audio/sfx/sfx_spell_cast.ogg',victory:'assets/audio/sfx/sfx_victory.ogg',monster_die:'assets/audio/sfx/sfx_monster_die.ogg',button_click:'assets/audio/sfx/sfx_button_click.ogg'};
-const AudioRouterA58176={bgm:null,bgmSrc:'',bgmEnabled:false,sfxEnabled:true,unlocked:false,sfxCache:{},lastSfx:{},currentScreen:'',unlock:function(){this.unlocked=true;},scene:function(screen){screen=String(screen||state?.screen||'default');if(screen==='battle')return state?.stage?.boss?'boss':'battle';return screen;},route:function(screen){this.currentScreen=screen||state?.screen||'';if(!this.bgmEnabled||!this.unlocked)return null;const scene=this.scene(screen);const src=BGM_A58176[scene]||BGM_A58176.default;if(this.bgm&&this.bgmSrc===src&&!this.bgm.paused)return src;stopLegacyAudioA58176();if(this.bgm){try{this.bgm.pause();this.bgm.currentTime=0;}catch(e){}}const a=new Audio(src);a.loop=true;a.volume=.30;a.dataset.a58176='1';this.bgm=a;this.bgmSrc=src;try{state.audio=a;state.music=true;}catch(e){}a.play().catch(()=>{});return src;},toggleBgm:function(){this.unlock();this.bgmEnabled=!this.bgmEnabled;try{state.music=this.bgmEnabled;}catch(e){}document.querySelectorAll('[data-action="music"],[data-action="settings-music"],[data-action="teacher-music"]').forEach(b=>{if(b.dataset.action==='music')b.textContent=this.bgmEnabled?'♫':'♪';else b.textContent=this.bgmEnabled?'關閉音樂':'開啟音樂';});if(this.bgmEnabled)this.route(state?.screen||'title');else if(this.bgm){try{this.bgm.pause();}catch(e){}}return this.bgmEnabled;},playSfx:function(name,opts){opts=opts||{};const key=String(name||'button_click');if(['click','button','button_click','answer_lock','lock'].includes(key))return false;if(!this.sfxEnabled)return false;this.unlock();const now=Date.now();const gap=260;if(now-(this.lastSfx[key]||0)<gap)return false;this.lastSfx[key]=now;const src=SFX_A58176[key];if(!src)return false;try{let base=this.sfxCache[src];if(!base){base=new Audio(src);base.preload='auto';this.sfxCache[src]=base;}const a=base.cloneNode(true);let scale=opts.scale??1;if(state?.screen==='pkbattle'||state?.screen==='pksetup')scale*=.45;a.volume=Math.max(0,Math.min(1,(opts.volume??.24)*scale));a.play().catch(()=>{});return true;}catch(e){return false;}}};
+const AudioRouterA58176={bgm:null,bgmSrc:'',bgmEnabled:false,sfxEnabled:true,unlocked:false,sfxCache:{},lastSfx:{},currentScreen:'',unlock:function(){this.unlocked=true;},scene:function(screen){screen=String(screen||state?.screen||'default');if(screen==='battle')return state?.stage?.boss?'boss':'battle';return screen;},route:function(screen){this.currentScreen=screen||state?.screen||'';if(!this.bgmEnabled||!this.unlocked)return null;const scene=this.scene(screen);const src=BGM_A58176[scene]||BGM_A58176.default;if(this.bgm&&this.bgmSrc===src&&!this.bgm.paused)return src;stopLegacyAudioA58176();if(this.bgm){try{this.bgm.pause();this.bgm.currentTime=0;}catch(e){}}const a=new Audio(src);a.loop=true;a.volume=.30;a.dataset.a58176='1';this.bgm=a;this.bgmSrc=src;try{state.audio=a;state.music=true;}catch(e){}a.play().catch(()=>{});return src;},toggleBgm:function(){this.unlock();this.bgmEnabled=!this.bgmEnabled;try{state.music=this.bgmEnabled;}catch(e){}document.querySelectorAll('[data-action="music"],[data-action="settings-music"],[data-action="teacher-music"]').forEach(b=>{if(b.dataset.action==='music')b.textContent=this.bgmEnabled?'♫':'♪';else b.textContent=this.bgmEnabled?'關閉音樂':'開啟音樂';});if(this.bgmEnabled)this.route(state?.screen||'title');else if(this.bgm){try{this.bgm.pause();}catch(e){}}return this.bgmEnabled;},playSfx:function(name,opts){opts=opts||{};const key=String(name||'button_click');if(['click','button','button_click','answer_lock','lock'].includes(key))return false;if(!this.sfxEnabled)return false;this.unlock();const now=Date.now();const gap=260;if(now-(this.lastSfx[key]||0)<gap)return false;this.lastSfx[key]=now;const src=SFX_A58176[key];if(!src)return false;try{let base=this.sfxCache[src];if(!base){base=new Audio(src);base.preload='none';this.sfxCache[src]=base;}const a=base.cloneNode(true);let scale=opts.scale??1;if(state?.screen==='pkbattle'||state?.screen==='pksetup')scale*=.45;a.volume=Math.max(0,Math.min(1,(opts.volume??.24)*scale));a.play().catch(()=>{});return true;}catch(e){return false;}}};
 window.AudioRouterA58176=AudioRouterA58176;
 try{window.toggleMusic=function(){return AudioRouterA58176.toggleBgm();};toggleMusic=window.toggleMusic;}catch(e){}
 try{const oldSet=setScreen;if(oldSet&&!oldSet.__KA_A58176_AUDIO){const w=function(name,html,bg){const out=oldSet.apply(this,arguments);setTimeout(()=>AudioRouterA58176.route(name),0);return out;};w.__KA_A58176_AUDIO=true;window.setScreen=w;setScreen=w;}}catch(e){}
@@ -13869,7 +14251,7 @@ function readStateA58177(){
 function makeBgmAudioA58177(src){
   const a=new Audio();
   a.loop=true;
-  a.preload='auto';
+  a.preload='metadata';
   a.volume=0;
   a.dataset.kaA58177Bgm='1';
   a.dataset.kaA58177Src=src;
@@ -13986,7 +14368,7 @@ function makeRouterA58177(){
       const src=SFX_BY_KEY_A58177[key]||SFX_BY_KEY_A58177.button_click;
       try{
         let base=this.sfxCache[src];
-        if(!base){base=new Audio(src);base.preload='auto';base.dataset.kaA58177Sfx='1';this.sfxCache[src]=base;}
+        if(!base){base=new Audio(src);base.preload='none';base.dataset.kaA58177Sfx='1';this.sfxCache[src]=base;}
         const inst=base.cloneNode(true);
         inst.dataset.kaA58177Sfx='1';
         inst.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58177[key]||.2)*this.sfxVolume/.25));
@@ -14232,7 +14614,7 @@ function stopLegacyA58178(keep){
 function makeBgmA58178(src){
   const a=new Audio(src);
   a.loop=true;
-  a.preload='auto';
+  a.preload='metadata';
   a.volume=0;
   a.dataset.kaA58178Bgm='1';
   try{window.__kaA58178BgmRegistry=window.__kaA58178BgmRegistry||[];window.__kaA58178BgmRegistry.push(a);}catch(e){}
@@ -14326,7 +14708,7 @@ function createRouterA58178(){
     try{
       this.unlock();
       let base=this.sfxCache[src];
-      if(!base){base=new Audio(src);base.preload='auto';this.sfxCache[src]=base;}
+      if(!base){base=new Audio(src);base.preload='none';this.sfxCache[src]=base;}
       const inst=base.cloneNode(true);
       inst.volume=Math.max(0,Math.min(1,(SFX_VOLUME_A58178[key]||.1)*this.sfxMaster));
       inst.play().catch(()=>{});
@@ -14387,6 +14769,352 @@ window.KA_A581715_audit=function(){
   const stateInfo=window.state?{screen:state.screen,pkReady:[!!state.pkP1Ready,!!state.pkP2Ready],pkPool:state.pk?.pairs?.length||0,pkGrade:state.pkGrade,pkSubject:state.pkSubject,pkUnit:state.pkUnit}:{};
   return {version:window.KA_A581715_VERSION,pkEntryUsesNormalizedPool:true,battleLayoutRebalanced:true,screen:stateInfo,rects:{battleStage:r('.battleStageA14'),battlePanel:r('.battleQAA14'),pkStage:r('.pk-battle-stage-1710'),pkQuestion:r('.pk-question-layer-1710'),pkActions:r('.pk-bottom-actions-1710')}};
 };
+})();
+</script>
+
+
+
+<style id="A5821_CROSS_DEVICE_PK_AND_RESULT_STABILITY_CSS">
+/* V27.0-A5.8.17.21 cross-device PK visibility + result stability + first-load smoothness. */
+:root{
+  --app-height:100dvh;
+  --ka-vh:100dvh;
+  --safe-top:env(safe-area-inset-top, 0px);
+  --safe-bottom:env(safe-area-inset-bottom, 0px);
+  --pk-safe-bottom-extra:12px;
+  --pk-bottom-h:46px;
+}
+html,body{min-height:var(--app-height);}
+body.result-open{overflow:hidden!important;}
+/* Actual PK 1710 layout: three strict rows. The answer layer and bottom actions are always inside the visible viewport. */
+.pkBattle1710{
+  --pk-stage-h:clamp(360px,50vh,520px);
+  --pk-bottom-h:46px;
+  grid-template-rows:var(--pk-stage-h) minmax(0,1fr) var(--pk-bottom-h)!important;
+  height:var(--app-height)!important;
+  max-height:var(--app-height)!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  padding-bottom:calc(var(--safe-bottom,0px) + var(--pk-safe-bottom-extra,0px))!important;
+}
+.pkBattle1710::before{
+  background:linear-gradient(180deg,
+    rgba(0,18,34,.08) 0,
+    rgba(0,18,34,.12) calc(var(--pk-stage-h) - 1px),
+    rgba(232,248,255,.73) var(--pk-stage-h),
+    rgba(232,248,255,.88) 100%)!important;
+}
+.pk-battle-stage-1710{
+  height:var(--pk-stage-h)!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  align-items:end!important;
+  box-sizing:border-box!important;
+}
+.pk-question-layer-1710{
+  height:100%!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  align-items:stretch!important;
+  align-content:stretch!important;
+  box-sizing:border-box!important;
+}
+.pk-card-1710{
+  height:100%!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  grid-template-rows:minmax(28px,30px) minmax(54px,64px) auto minmax(32px,38px)!important;
+  align-content:start!important;
+}
+.pk-options-1710{
+  min-height:0!important;
+  height:auto!important;
+  overflow:hidden!important;
+  grid-template-rows:repeat(2,auto)!important;
+  grid-auto-rows:auto!important;
+  align-content:start!important;
+  align-items:start!important;
+  gap:6px 8px!important;
+}
+.pk-choice-1710{
+  min-height:50px!important;
+  max-height:72px!important;
+  height:auto!important;
+  box-sizing:border-box!important;
+  padding:6px 10px!important;
+  line-height:1.18!important;
+}
+/* A5822 adaptive PK answer density: short answers use compact buttons; long answers keep two-line touch area. */
+.pk-choice-1710.pk-choice-short,.pk-choice-1710.adaptShort{min-height:54px!important;max-height:58px!important;}
+.pk-choice-1710.pk-choice-medium,.pk-choice-1710.adaptMedium{min-height:58px!important;max-height:64px!important;}
+.pk-choice-1710.pk-choice-long,.pk-choice-1710.adaptLong{min-height:64px!important;max-height:72px!important;}
+.pk-choice-1710.pk-choice-tiny,.pk-choice-1710.adaptTiny{min-height:66px!important;max-height:74px!important;}
+.pk-choice-1710 .optionTextA20{line-height:1.18!important;}
+.pk-bottom-actions-1710{
+  height:var(--pk-bottom-h)!important;
+  min-height:0!important;
+  margin:0 auto!important;
+  padding:2px 0 calc(2px + var(--safe-bottom,0px))!important;
+  align-self:stretch!important;
+  box-sizing:border-box!important;
+}
+.pk-bottom-actions-1710 .btn{height:38px!important;min-height:34px!important;}
+/* Whiteboard / shorter browser windows: answer visibility has priority over character size. */
+@media (max-height:820px){
+  .pkBattle1710{
+    --pk-stage-h:clamp(265px,37vh,330px)!important;
+    --pk-bottom-h:44px!important;
+    --pk-safe-bottom-extra:16px!important;
+  }
+  .pk-battle-stage-1710{
+    padding-top:calc(48px + var(--safe-top,0px))!important;
+    padding-bottom:10px!important;
+    padding-left:max(104px,7.4vw)!important;
+    padding-right:max(128px,8.8vw)!important;
+  }
+  .pk-player-art-1710{max-height:clamp(150px,22vh,220px)!important;max-width:min(29vw,330px)!important;}
+  .pk-vs-1710{font-size:clamp(42px,4.5vw,68px)!important;}
+  .pk-round-1710{font-size:clamp(13px,1vw,16px)!important;margin-top:4px!important;}
+  .pk-stage-hud-1710{width:clamp(178px,15.6vw,242px)!important;min-height:78px!important;font-size:clamp(11px,.9vw,14px)!important;top:calc(-42px + var(--safe-top,0px))!important;}
+  .pk-stage-hud-1710 b{font-size:clamp(13px,1vw,17px)!important;}
+  .pk-stage-hud-1710 .bar{height:6px!important;margin:1px 0 3px!important;}
+  .pk-question-layer-1710{padding:5px 12px 4px!important;gap:8px!important;}
+  .pk-card-1710{padding:5px!important;gap:4px!important;grid-template-rows:minmax(24px,28px) minmax(44px,58px) auto minmax(30px,36px)!important;align-content:start!important;}
+  .pk-card-1710 h3{font-size:clamp(14px,1.05vw,18px)!important;}
+  .pk-question-1710{min-height:44px!important;max-height:58px!important;font-size:clamp(15px,1.25vw,19px)!important;line-height:1.16!important;padding:4px 8px!important;}
+  .pk-options-1710{grid-template-rows:repeat(2,auto)!important;grid-auto-rows:auto!important;align-content:start!important;gap:5px!important;}
+  .pk-choice-1710{min-height:50px!important;max-height:68px!important;height:auto!important;padding:5px 8px!important;font-size:clamp(12px,.95vw,16px)!important;}
+  .pk-choice-1710 .letter{width:24px!important;height:24px!important;flex-basis:24px!important;margin-right:7px!important;}
+  .pk-choice-1710.pk-choice-short,.pk-choice-1710.adaptShort{min-height:50px!important;max-height:54px!important;}
+  .pk-choice-1710.pk-choice-medium,.pk-choice-1710.adaptMedium{min-height:54px!important;max-height:60px!important;}
+  .pk-choice-1710.pk-choice-long,.pk-choice-1710.adaptLong{min-height:60px!important;max-height:68px!important;}
+  .pk-choice-1710.pk-choice-tiny,.pk-choice-1710.adaptTiny{min-height:62px!important;max-height:70px!important;}
+  .pk-lock-row-1710{min-height:30px!important;gap:6px!important;}
+  .pk-lock-row-1710 .btn{height:30px!important;min-height:28px!important;padding:2px 10px!important;font-size:12px!important;}
+}
+@media (max-height:700px){
+  .pkBattle1710{
+    --pk-stage-h:clamp(210px,33vh,260px)!important;
+    --pk-bottom-h:40px!important;
+    --pk-safe-bottom-extra:18px!important;
+  }
+  .pk-battle-stage-1710{padding-top:calc(42px + var(--safe-top,0px))!important;padding-bottom:8px!important;padding-left:max(88px,6vw)!important;padding-right:max(106px,7.6vw)!important;}
+  .pk-player-art-1710{max-height:clamp(128px,20vh,180px)!important;max-width:min(27vw,270px)!important;}
+  .pk-vs-1710{font-size:clamp(36px,4.1vw,56px)!important;}
+  .pk-stage-hud-1710{transform:scale(.84)!important;transform-origin:top left!important;top:calc(-36px + var(--safe-top,0px))!important;}
+  .pk-stage-side-1710.p2 .pk-stage-hud-1710{transform-origin:top right!important;}
+  .pk-question-layer-1710{padding:4px 9px 3px!important;gap:6px!important;}
+  .pk-card-1710{grid-template-rows:minmax(20px,26px) minmax(36px,48px) auto minmax(28px,32px)!important;gap:3px!important;padding:4px!important;align-content:start!important;}
+  .pk-question-1710{min-height:36px!important;max-height:48px!important;font-size:clamp(13px,1.05vw,16px)!important;line-height:1.12!important;}
+  .pk-options-1710{grid-template-rows:repeat(2,auto)!important;grid-auto-rows:auto!important;align-content:start!important;gap:4px!important;}
+  .pk-choice-1710{min-height:46px!important;max-height:64px!important;height:auto!important;font-size:clamp(11px,.85vw,14px)!important;padding:3px 6px!important;}
+  .pk-choice-1710.pk-choice-short,.pk-choice-1710.adaptShort{min-height:46px!important;max-height:50px!important;}
+  .pk-choice-1710.pk-choice-medium,.pk-choice-1710.adaptMedium{min-height:50px!important;max-height:56px!important;}
+  .pk-choice-1710.pk-choice-long,.pk-choice-1710.adaptLong{min-height:56px!important;max-height:64px!important;}
+  .pk-choice-1710.pk-choice-tiny,.pk-choice-1710.adaptTiny{min-height:58px!important;max-height:66px!important;}
+  .pk-lock-row-1710 span{font-size:11px!important;}
+  .pk-bottom-actions-1710 .btn{height:32px!important;min-height:30px!important;font-size:12px!important;padding:2px 10px!important;}
+}
+/* Result / settlement stability: fixed overlay, stable card, no repeated scroll jumps. */
+.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay{
+  position:fixed!important;inset:0!important;overflow:hidden!important;z-index:100500!important;
+  contain:layout paint!important;overscroll-behavior:none!important;
+}
+.ka-a573-overlay[data-a5821-mounted="1"],.ka-a53-overlay[data-a5821-mounted="1"],.pkResultOverlayA57[data-a5821-mounted="1"]{will-change:auto!important;}
+.ka-a573-card,.ka-a53-card,.pkResultCardA57,.resultCard,.pkResultCard,.settlementCard{
+  max-height:calc(var(--app-height,100vh) - 48px)!important;
+  min-height:min(520px,calc(var(--app-height,100vh) - 72px))!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr) auto!important;
+}
+.ka-a573-card{grid-template-rows:auto auto auto minmax(0,1fr) auto!important;}
+.ka-a573-stats,.ka-a53-stats,.pkResultGridA57{min-height:86px!important;}
+.ka-a573-mainBadge,.ka-a573-mainBadge img,.ka-a573-rewardIcon,.resultRewardIcon,.resultBadge,.resultStar,.resultChest,.resultTrophy{object-fit:contain!important;flex:0 0 auto!important;}
+.ka-a573-rewardHero{min-height:132px!important;overflow:hidden!important;}
+.ka-a573-actions,.ka-a53-actions,.pkResultActionsA57{flex-shrink:0!important;}
+.ka-a573-card img,.ka-a53-card img,.pkResultCardA57 img{contain:layout paint!important;}
+@media (max-height:760px){
+  .ka-a573-card,.ka-a53-card,.pkResultCardA57{max-height:calc(var(--app-height,100vh) - 28px)!important;min-height:auto!important;}
+  .ka-a573-stats,.ka-a53-stats,.pkResultGridA57{min-height:66px!important;}
+  .ka-a573-rewardHero{min-height:108px!important;}
+}
+/* Loading smoothness: avoid expensive image decode jank where supported. */
+img{image-rendering:auto;}
+</style>
+<script id="A5821_CROSS_DEVICE_PK_RESULT_PERFORMANCE_JS">
+(function(){
+'use strict';
+if(window.KA_A5821_CROSS_DEVICE_PK_RESULT_PERFORMANCE_INSTALLED)return;
+window.KA_A5821_CROSS_DEVICE_PK_RESULT_PERFORMANCE_INSTALLED=true;
+const VERSION='V27.0-A5.8.17.21_cross_device_pk_visibility_performance_fix';
+function qsa(sel,root){try{return Array.from((root||document).querySelectorAll(sel));}catch(e){return[]}}
+function qs(sel,root){try{return (root||document).querySelector(sel);}catch(e){return null}}
+function isPkScreen(){try{return (window.state&&state.screen==='pkbattle')||!!qs('.screen[data-screen="pkbattle"],.pkBattle1710');}catch(e){return !!qs('.screen[data-screen="pkbattle"],.pkBattle1710');}}
+
+function updateResponsiveBattleMode(){
+  try{
+    const vv=window.visualViewport;
+    const h=Math.max(360,Math.round((vv&&vv.height)||window.innerHeight||document.documentElement.clientHeight||768));
+    const w=Math.max(320,Math.round((vv&&vv.width)||window.innerWidth||document.documentElement.clientWidth||1366));
+    const touch=(navigator.maxTouchPoints||0)>0;
+    const root=document.documentElement, body=document.body;
+    root.style.setProperty('--app-height',h+'px');
+    root.style.setProperty('--ka-vh',h+'px');
+    root.style.setProperty('--safe-bottom-extra',(h<700?22:(h<820?18:12))+'px');
+    root.style.setProperty('--pk-viewport-height',h+'px');
+    root.style.setProperty('--pk-viewport-width',w+'px');
+    const pk=isPkScreen();
+    const battle=(window.state&&state.screen==='battle')||!!document.querySelector('.battleA14');
+    const result=!!document.querySelector('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay');
+    ['battle-desktop-large','battle-desktop-normal','battle-whiteboard-safe','battle-tablet-compact','pk-compact-height','pk-small-height','pk-whiteboard-safe','is-pk-battle','is-battle-screen','result-open'].forEach(c=>body.classList.remove(c));
+    if(h>=900)body.classList.add('battle-desktop-large');
+    else if(h>=740 && !touch)body.classList.add('battle-desktop-normal');
+    else if(h>=640)body.classList.add('battle-whiteboard-safe');
+    else body.classList.add('battle-tablet-compact');
+    if(pk){
+      body.classList.add('is-pk-battle');
+      if(h<=820)body.classList.add('pk-compact-height');
+      if(h<=700)body.classList.add('pk-small-height');
+      if(body.classList.contains('battle-whiteboard-safe')||body.classList.contains('battle-tablet-compact'))body.classList.add('pk-whiteboard-safe');
+    }
+    if(battle)body.classList.add('is-battle-screen');
+    if(result)body.classList.add('result-open');
+  }catch(e){}
+}
+function updateViewportA5821(){return updateResponsiveBattleMode();}
+try{window.updateResponsiveBattleMode=updateResponsiveBattleMode;}catch(e){}
+function observeScreensA5821(){
+  try{
+    if(window.__KA_A5821_SCREEN_OBSERVER)return;
+    window.__KA_A5821_SCREEN_OBSERVER=new MutationObserver(()=>{requestAnimationFrame(updateResponsiveBattleMode);requestAnimationFrame(optimizeMediaA5821);});
+    window.__KA_A5821_SCREEN_OBSERVER.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','data-screen']});
+  }catch(e){}
+}
+function optimizeMediaA5821(){
+  try{
+    qsa('img').forEach(img=>{
+      if(!img.getAttribute('decoding'))img.setAttribute('decoding','async');
+      if(!img.closest('.introFrameA578,.pk-battle-stage-1710,.battleStageA14,.titleContent')&&!img.getAttribute('loading'))img.setAttribute('loading','lazy');
+      img.draggable=false;
+    });
+    qsa('audio').forEach(a=>{try{if(!a.dataset.kaA5821Touched){a.preload=a.dataset.kaBgm==='1'||a.dataset.kaA58178Bgm==='1'?'metadata':'none';a.dataset.kaA5821Touched='1';}}catch(e){}});
+  }catch(e){}
+}
+function dedupeResultOverlaysA5821(){
+  const overlays=qsa('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay');
+  if(overlays.length>1){
+    overlays.slice(0,-1).forEach(el=>{try{el.remove();}catch(e){}});
+  }
+  const active=qsa('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay');
+  document.body.classList.toggle('result-open',active.length>0);
+  active.forEach(overlay=>{
+    if(!overlay.dataset.a5821Mounted){
+      overlay.dataset.a5821Mounted='0';
+      requestAnimationFrame(()=>{try{overlay.dataset.a5821Mounted='1';overlay.classList.add('is-mounted');}catch(e){}});
+    }
+    if(!overlay.dataset.scrollInitialized){
+      try{const sc=overlay.querySelector('.ka-a573-card,.ka-a53-card,.pkResultCardA57,.resultCard,.pkResultCard,.settlementCard'); if(sc)sc.scrollTop=0;}catch(e){}
+      overlay.dataset.scrollInitialized='1';
+    }
+    qsa('img',overlay).forEach(img=>{
+      try{img.setAttribute('decoding','async'); if(!img.width&&!img.style.width)img.style.minWidth='40px'; if(!img.height&&!img.style.height)img.style.minHeight='40px';}catch(e){}
+    });
+  });
+}
+function installResultObserverA5821(){
+  try{
+    if(window.__KA_A5821_RESULT_OBSERVER)return;
+    window.__KA_A5821_RESULT_OBSERVER=new MutationObserver(()=>requestAnimationFrame(dedupeResultOverlaysA5821));
+    window.__KA_A5821_RESULT_OBSERVER.observe(document.body,{childList:true,subtree:true});
+    dedupeResultOverlaysA5821();
+  }catch(e){}
+}
+function wrapOnceA5821(obj,name,wrapper){
+  try{
+    const fn=obj&&obj[name]; if(typeof fn!=='function'||fn.__KA_A5821_WRAPPED)return false;
+    const w=wrapper(fn); w.__KA_A5821_WRAPPED=true; obj[name]=w;
+    try{ if(obj===window && typeof eval(name)!=='undefined') eval(name+'=window[name]'); }catch(e){}
+    return true;
+  }catch(e){return false;}
+}
+
+function resultOverlayLockA5823(kind){
+  try{
+    if(!window.state)return false;
+    const key=kind==='pk'?'pkResultShowing':'resultShowing';
+    if(state[key])return true;
+    state[key]=true; state.resultRendered=true; state.resultId=state.resultId||('r'+Date.now()+Math.random().toString(36).slice(2));
+    document.body.classList.add('result-open');
+  }catch(e){}
+  return false;
+}
+function clearResultOverlayLockA5823(){
+  try{if(window.state){state.resultShowing=false;state.pkResultShowing=false;state.resultRendered=false;state.battleEnded=false;}document.body.classList.remove('result-open');}catch(e){}
+}
+function stabilizeResultOverlaysA5823(){
+  try{
+    const overlays=qsa('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay');
+    if(overlays.length>1)overlays.slice(0,-1).forEach(el=>{try{el.remove();}catch(e){}});
+    qsa('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay').forEach(overlay=>{
+      document.body.classList.add('result-open');
+      if(!overlay.dataset.resultMounted){overlay.dataset.resultMounted='0';requestAnimationFrame(()=>{overlay.dataset.resultMounted='1';overlay.classList.add('is-mounted');});}
+      const body=overlay.querySelector('.ka-a573-body,.ka-a53-body,.pkResultBodyA57,.resultBody,.pkResultBody,.settlementBody,.ka-a573-card,.ka-a53-card,.pkResultCardA57,.resultCard,.pkResultCard,.settlementCard');
+      if(body&&!overlay.dataset.scrollInitialized){body.scrollTop=0;overlay.dataset.scrollInitialized='1';}
+      qsa('img',overlay).forEach(img=>{img.decoding='async';img.style.objectFit=img.style.objectFit||'contain';});
+    });
+  }catch(e){}
+}
+
+function installFunctionGuardsA5821(){
+  ['renderPKSummary','renderSummary','renderResult','showResult','showPKResult','renderPKResult'].forEach(n=>wrapOnceA5821(window,n,old=>function(){
+    if(resultOverlayLockA5823(String(n).toLowerCase().includes('pk')?'pk':'normal'))return true;
+    const out=old.apply(this,arguments); requestAnimationFrame(stabilizeResultOverlaysA5823); return out;
+  }));
+  wrapOnceA5821(window,'finishBattleFinalA5811',old=>function(reason){
+    try{
+      const b=window.state&&state.battle;
+      if(b){
+        if(b.resultShowingA5821)return true;
+        const ret=old.apply(this,arguments);
+        if(ret)b.resultShowingA5821=true;
+        return ret;
+      }
+    }catch(e){}
+    return old.apply(this,arguments);
+  });
+  wrapOnceA5821(window,'startBattle',old=>function(){
+    try{if(window.state&&state.battle){state.battle.resultShowingA5821=false;state.battle.finalizingA5811=false;}}catch(e){}
+    document.body.classList.remove('result-open');
+    return old.apply(this,arguments);
+  });
+  wrapOnceA5821(window,'renderPKSummary',old=>function(){
+    try{if(window.state)state.pkResultShowingA5821=true;}catch(e){}
+    const out=old.apply(this,arguments);
+    requestAnimationFrame(dedupeResultOverlaysA5821);
+    return out;
+  });
+  wrapOnceA5821(window,'renderPKBattle',old=>function(){
+    const out=old.apply(this,arguments);
+    requestAnimationFrame(updateResponsiveBattleMode);
+    requestAnimationFrame(optimizeMediaA5821);
+    return out;
+  });
+}
+function auditA5821(){
+  const rect=(sel)=>{const el=qs(sel);if(!el)return null;const r=el.getBoundingClientRect();return {top:Math.round(r.top),bottom:Math.round(r.bottom),height:Math.round(r.height),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)}};
+  return {version:VERSION,viewport:{w:window.innerWidth,h:window.innerHeight},bodyClasses:[...document.body.classList].filter(c=>/^pk-|^is-pk|^result/.test(c)),screen:(window.state&&state.screen)||'',pk:{battle:rect('.pkBattle1710'),stage:rect('.pk-battle-stage-1710'),questions:rect('.pk-question-layer-1710'),actions:rect('.pk-bottom-actions-1710'),p1Card:rect('.pk-card-1710')},result:{overlays:qsa('.ka-a573-overlay,.ka-a53-overlay,.pk-result-overlay,.pkResultOverlayA57,.resultOverlay,.pkResultOverlay,.settlementOverlay').length,resultOpen:document.body.classList.contains('result-open')},media:{images:qsa('img').length,lazy:qsa('img[loading="lazy"]').length,audio:qsa('audio').length}};
+}
+function installA5821(){
+  updateViewportA5821(); optimizeMediaA5821(); installResultObserverA5821(); installFunctionGuardsA5821(); observeScreensA5821();
+  window.KA_A5821_crossDeviceAudit=auditA5821;
+  try{document.title='Knowledge Adventure '+VERSION;let meta=document.querySelector('meta[name="ka-version"]');if(!meta){meta=document.createElement('meta');meta.name='ka-version';document.head.appendChild(meta);}meta.content=VERSION;}catch(e){}
+}
+['resize','orientationchange','fullscreenchange'].forEach(ev=>window.addEventListener(ev,()=>{setTimeout(updateViewportA5821,30);setTimeout(dedupeResultOverlaysA5821,60);},{passive:true}));
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installA5821,{once:true});else installA5821();
+setTimeout(installA5821,0);setTimeout(updateViewportA5821,500);
 })();
 </script>
 
