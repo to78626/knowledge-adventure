@@ -5233,7 +5233,7 @@ img{max-width:100%;}
 <body><div id="app" class="app"></div><div id="toast" class="toast"></div><div id="orientationHint" aria-live="polite">請將 iPad 轉為橫向使用</div>
 <script>
 'use strict';
-const VERSION='V27.0-A5.8.17.15_pk_entry_battle_layout_repair';
+const VERSION='V27.0-A5.8.17.24_loading_asset_performance_optimization';
 const A='assets/ka/v26_0_a5/';
 const V12='assets/ka/v27_0_a1_2/';
 const A12='assets/ka/v27_0_a1_2/';
@@ -6627,20 +6627,65 @@ function guardFastTapA23(ev){
 document.addEventListener('pointerdown',guardFastTapA23,{capture:true,passive:false});
 function regressionImageCheckA23(){
  document.querySelectorAll('img').forEach(img=>{
-  if(!img.getAttribute('loading')) img.setAttribute('loading','eager');
   if(!img.getAttribute('decoding')) img.setAttribute('decoding','async');
+  const critical=img.dataset&&img.dataset.critical==='true';
+  const isIntro=!!img.closest('.introFrameA578,.introStageA578,.titleA15');
+  const isVisibleBattle=!!img.closest('.battleStageA14,.pk-battle-stage-1710,.battleA14,.pkBattle1710');
+  if(!img.getAttribute('loading')) img.setAttribute('loading',(critical||isIntro||isVisibleBattle)?'eager':'lazy');
+  img.draggable=false;
  });
 }
 
 regressionImageCheckA23();
 
+
 if(typeof setScreen==='function'&&!window.__kaA23SetScreenWrapped){
  window.__kaA23SetScreenWrapped=true;
  const __kaSetScreenA23=setScreen;
- setScreen=function(){const ret=__kaSetScreenA23.apply(this,arguments);setTimeout(regressionImageCheckA23,0);return ret;}
+ setScreen=function(){const ret=__kaSetScreenA23.apply(this,arguments);setTimeout(regressionImageCheckA23,0);try{if(typeof window.KA_A5824_applyMediaPolicy==='function')requestAnimationFrame(window.KA_A5824_applyMediaPolicy);}catch(e){}return ret;}
 }
 
-renderIntro();
+function renderLoadingScreenA5824(percent=8,msg='初始化遊戲...'){
+  try{
+    document.body.classList.add('ka-loading-active-a5824');
+    const p=Math.max(0,Math.min(100,Math.round(percent||0)));
+    app.innerHTML=`<section class="screen loadingScreenA5824" data-screen="loading"><div class="loadingCardA5824"><div class="loadingTitleA5824">知識冒險載入中...</div><div class="loadingTextA5824">${escapeHtml(msg)}</div><div class="loadingBarA5824"><span style="width:${p}%"></span></div><div class="loadingPercentA5824">${p}%</div></div></section>`;
+  }catch(e){}
+}
+function updateLoadingA5824(percent,msg){try{const p=Math.max(0,Math.min(100,Math.round(percent||0)));const t=document.querySelector('.loadingTextA5824');const b=document.querySelector('.loadingBarA5824 span');const n=document.querySelector('.loadingPercentA5824');if(t)t.textContent=msg||'';if(b)b.style.width=p+'%';if(n)n.textContent=p+'%';}catch(e){}}
+function preloadImageA5824(src){return new Promise(resolve=>{try{if(!src)return resolve(false);const img=new Image();img.decoding='async';img.onload=()=>resolve(true);img.onerror=()=>resolve(false);img.src=src;}catch(e){resolve(false);}})}
+function criticalAssetsA5824(){try{return [...new Set([IMG&&IMG.title,IMG&&IMG.world,IMG&&IMG.single,IMG&&IMG.pk,'assets/ka/v27_0_a5_8_15_2_intro_storyboard/intro_slide_01.jpg'].filter(Boolean))];}catch(e){return [];}}
+function nextStageAssetsA5824(){try{return [...new Set([IMG&&IMG.world,IMG&&IMG.temple,IMG&&IMG.single,IMG&&IMG.pk,roles&&roles[0]&&roles[0].img,roles&&roles[1]&&roles[1].img].filter(Boolean))];}catch(e){return [];}}
+async function preloadCriticalAssetsA5824(){const list=criticalAssetsA5824();await Promise.allSettled(list.map(preloadImageA5824));return list.length;}
+function preloadNextStageAssetsA5824(){setTimeout(()=>{try{Promise.allSettled(nextStageAssetsA5824().map(preloadImageA5824));}catch(e){}},600)}
+function buildQuestionIndexesA5824(){try{if(typeof window.KA_A5824_buildQuestionIndex==='function')return window.KA_A5824_buildQuestionIndex();if(typeof allQuestions==='function'){const qs=allQuestions();window.__KA_A5824_BOOT_QCOUNT=qs.length;return qs.length;}}catch(e){}return 0;}
+async function bootGameA5824(){
+  if(window.__KA_A5824_BOOTED)return renderIntro();
+  window.__KA_A5824_BOOTED=true;
+  try{
+    renderLoadingScreenA5824(12,'初始化遊戲...');
+    await new Promise(r=>setTimeout(r,20));
+    updateLoadingA5824(38,'建立題庫索引...');
+    buildQuestionIndexesA5824();
+    await new Promise(r=>setTimeout(r,20));
+    updateLoadingA5824(62,'載入開場素材...');
+    await preloadCriticalAssetsA5824();
+    updateLoadingA5824(84,'準備主畫面...');
+    await new Promise(r=>requestAnimationFrame(()=>r()));
+    updateLoadingA5824(100,'開始冒險');
+    await new Promise(r=>setTimeout(r,80));
+    document.body.classList.remove('ka-loading-active-a5824');
+    renderIntro();
+    preloadNextStageAssetsA5824();
+  }catch(e){console.warn('A5824 boot fallback',e);document.body.classList.remove('ka-loading-active-a5824');renderIntro();}
+}
+window.KA_A5824_bootGame=bootGameA5824;
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>bootGameA5824(),{once:true});
+}else{
+  bootGameA5824();
+}
 </script>
 <script>window.KA270A30A1_audit={base:'V27.0-A2.3',mapAssetsImported:true,mapAssetsAlphaAccepted:true,noMapGameplayChange:true,indexStartGameSyncRequired:true};</script>
 <script>window.KA270A30A32_audit={base:'V27.0-A3.2',mapNodeOutlineHotfix:true,noMapGameplayChange:true,indexStartGameSyncRequired:true};</script>
@@ -14774,6 +14819,19 @@ window.KA_A581715_audit=function(){
 
 
 
+
+
+<style id="A5824_LOADING_ASSET_PERFORMANCE_CSS">
+.loadingScreenA5824{min-height:var(--app-height,100vh);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e6fbff,#f7fff5);font-family:"Microsoft JhengHei",system-ui,sans-serif;color:#123;}
+.loadingCardA5824{width:min(520px,88vw);border:4px solid rgba(31,137,176,.35);border-radius:24px;background:rgba(255,255,255,.92);box-shadow:0 16px 40px rgba(0,40,80,.18);padding:28px 30px;text-align:center;}
+.loadingTitleA5824{font-size:clamp(24px,3vw,34px);font-weight:900;margin-bottom:10px;color:#176b94;}
+.loadingTextA5824{font-size:clamp(16px,1.6vw,20px);font-weight:800;margin-bottom:16px;color:#31566a;}
+.loadingBarA5824{height:18px;border-radius:999px;background:#d6edf6;overflow:hidden;border:2px solid rgba(31,137,176,.22);}
+.loadingBarA5824 span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#56c4ff,#7ee09a);transition:width .18s ease;}
+.loadingPercentA5824{font-weight:900;margin-top:10px;color:#176b94;}
+body.ka-loading-active-a5824{overflow:hidden;}
+</style>
+
 <style id="A5821_CROSS_DEVICE_PK_AND_RESULT_STABILITY_CSS">
 /* V27.0-A5.8.17.21 cross-device PK visibility + result stability + first-load smoothness. */
 :root{
@@ -15115,6 +15173,70 @@ function installA5821(){
 ['resize','orientationchange','fullscreenchange'].forEach(ev=>window.addEventListener(ev,()=>{setTimeout(updateViewportA5821,30);setTimeout(dedupeResultOverlaysA5821,60);},{passive:true}));
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installA5821,{once:true});else installA5821();
 setTimeout(installA5821,0);setTimeout(updateViewportA5821,500);
+})();
+</script>
+
+
+<script id="A5824_LOADING_ASSET_PERFORMANCE_JS">
+(function(){
+'use strict';
+const VERSION_A5824='V27.0-A5.8.17.24_loading_asset_performance_optimization';
+function qsa(sel,root){try{return Array.from((root||document).querySelectorAll(sel));}catch(e){return[]}}
+function raf(fn){return requestAnimationFrame(()=>{try{fn();}catch(e){}})}
+const imgCache=new Map();
+function preloadImageA5824(src){return new Promise(resolve=>{try{if(!src)return resolve(false);if(imgCache.has(src))return resolve(imgCache.get(src));const img=new Image();img.decoding='async';img.onload=()=>{imgCache.set(src,true);resolve(true)};img.onerror=()=>{imgCache.set(src,false);resolve(false)};img.src=src;}catch(e){resolve(false);}})}
+window.KA_A5824_preloadImage=preloadImageA5824;
+function applyMediaPolicyA5824(root){
+  qsa('img',root||document).forEach(img=>{try{if(!img.getAttribute('decoding'))img.setAttribute('decoding','async');const critical=img.dataset&&img.dataset.critical==='true';const visible=!!img.closest('.introFrameA578,.introStageA578,.titleA15,.battleStageA14,.battleA14,.pk-battle-stage-1710,.pkBattle1710');if(!img.getAttribute('loading'))img.setAttribute('loading',(critical||visible)?'eager':'lazy');img.draggable=false;}catch(e){}});
+  qsa('audio',root||document).forEach(a=>{try{if(!a.dataset.a5824Preload){const isCurrent=a.dataset.kaBgm==='1'||a.dataset.kaA58178Bgm==='1';a.preload=isCurrent?'metadata':'none';a.dataset.a5824Preload='1';}}catch(e){}});
+}
+window.KA_A5824_applyMediaPolicy=applyMediaPolicyA5824;
+function collectCurrentBattleAssetsA5824(){
+  const list=[];
+  try{if(window.state&&state.battle){const b=state.battle;if(b.role&&b.role.img)list.push(b.role.img);if(b.enemy&&b.enemy.img)list.push(b.enemy.img);if(b.bg)list.push(b.bg);}}
+  catch(e){}
+  try{if(window.state&&state.pk){['p1','p2'].forEach(k=>{const r=state.pk[k]&&state.pk[k].role;if(r&&r.img)list.push(r.img);});}}
+  catch(e){}
+  return [...new Set(list.filter(Boolean))];
+}
+window.KA_A5824_preloadBattleAssets=function(ctx){const list=(ctx&&ctx.assets)||collectCurrentBattleAssetsA5824();return Promise.allSettled(list.map(preloadImageA5824));};
+window.KA_A5824_preloadPkAssets=window.KA_A5824_preloadBattleAssets;
+window.KA_A5824_preloadBossAssets=window.KA_A5824_preloadBattleAssets;
+window.KA_A5824_preloadNextStageAssets=function(){const list=[];try{if(window.IMG){['world','temple','single','pk','title'].forEach(k=>IMG[k]&&list.push(IMG[k]));}if(window.roles)(roles||[]).slice(0,3).forEach(r=>r&&r.img&&list.push(r.img));}catch(e){}return Promise.allSettled([...new Set(list)].map(preloadImageA5824));};
+
+const QB_CACHE={enabled:null,all:null,pk:new Map(),kingdom:new Map(),teacher:new Map(),battle:new Map(),rev:0};
+function clearQuestionPoolCachesA5824(reason){try{QB_CACHE.enabled=null;QB_CACHE.all=null;QB_CACHE.pk.clear();QB_CACHE.kingdom.clear();QB_CACHE.teacher.clear();QB_CACHE.battle.clear();QB_CACHE.rev++;window.__KA_A5824_LAST_CACHE_CLEAR=reason||'';}catch(e){}}
+window.clearQuestionPoolCaches=window.clearQuestionPoolCaches||clearQuestionPoolCachesA5824;
+window.KA_A5824_clearQuestionPoolCaches=clearQuestionPoolCachesA5824;
+function cacheKey(parts){return parts.map(v=>String(v??'')).join('|')+'|r'+QB_CACHE.rev;}
+function installQuestionCacheA5824(){
+  try{
+    if(window.QuestionBank&&!window.QuestionBank.__A5824_CACHED){
+      const oldAll=QuestionBank.getAll.bind(QuestionBank), oldEnabled=QuestionBank.getEnabled.bind(QuestionBank), oldPk=QuestionBank.getForPK?QuestionBank.getForPK.bind(QuestionBank):null;
+      QuestionBank.getAll=function(opts){const inc=!!(opts&&opts.includeDisabled);if(inc){if(!QB_CACHE.all)QB_CACHE.all=oldAll(opts);return QB_CACHE.all.slice?QB_CACHE.all.slice():QB_CACHE.all;}return QuestionBank.getEnabled();};
+      QuestionBank.getEnabled=function(){if(!QB_CACHE.enabled)QB_CACHE.enabled=oldEnabled();return QB_CACHE.enabled.slice?QB_CACHE.enabled.slice():QB_CACHE.enabled;};
+      if(oldPk)QuestionBank.getForPK=function(opts){opts=opts||{};const k=cacheKey(['pk',opts.grade,opts.subject,opts.unit,opts.difficulty]);if(!QB_CACHE.pk.has(k))QB_CACHE.pk.set(k,oldPk(opts));const v=QB_CACHE.pk.get(k);return v.slice?v.slice():v;};
+      QuestionBank.__A5824_CACHED=true;
+    }
+  }catch(e){}
+}
+function wrapCacheClearA5824(name){try{const old=window[name]||((typeof eval(name)==='function')?eval(name):null);if(typeof old!=='function'||old.__A5824_CLEAR)return;const w=function(){const r=old.apply(this,arguments);clearQuestionPoolCachesA5824(name);return r;};w.__A5824_CLEAR=true;window[name]=w;try{eval(name+'=window[name]');}catch(e){}}catch(e){}}
+function installCacheClearHooksA5824(){['saveImported','saveApprovedGenerated','saveDisabledQuestionIds','disableQuestion','enableQuestion','pruneDisabledQuestionIds'].forEach(wrapCacheClearA5824);}
+function wrapPoolsA5824(){
+  try{const old=window.getPkQuestionPool;if(typeof old==='function'&&!old.__A5824_CACHED){const w=function(options){options=options||{};const k=cacheKey(['getPk',options.grade,options.subject,options.unit,options.mode,options.difficulty]);if(!QB_CACHE.pk.has(k))QB_CACHE.pk.set(k,old.apply(this,arguments));const info=QB_CACHE.pk.get(k);return Object.assign({},info,{exactPool:(info.exactPool||[]).slice(),subjectPool:(info.subjectPool||[]).slice(),finalPool:(info.finalPool||[]).slice()});};w.__A5824_CACHED=true;window.getPkQuestionPool=w;try{getPkQuestionPool=w;}catch(e){}}}catch(e){}
+  try{const old=window.questionsForKingdom||((typeof questionsForKingdom==='function')?questionsForKingdom:null);if(typeof old==='function'&&!old.__A5824_CACHED){const w=function(subject,grade){const k=cacheKey(['kingdom',subject,grade]);if(!QB_CACHE.kingdom.has(k))QB_CACHE.kingdom.set(k,old.apply(this,arguments));const v=QB_CACHE.kingdom.get(k);return v.slice?v.slice():v;};w.__A5824_CACHED=true;window.questionsForKingdom=w;try{questionsForKingdom=w;}catch(e){}}}catch(e){}
+}
+function updateResponsiveLightA5824(){try{if(typeof window.updateResponsiveBattleMode==='function')window.updateResponsiveBattleMode();applyMediaPolicyA5824();}catch(e){}}
+let resizeRaf=0;
+function scheduleResponsiveUpdateA5824(){cancelAnimationFrame(resizeRaf);resizeRaf=requestAnimationFrame(updateResponsiveLightA5824);}
+window.KA_A5824_scheduleResponsiveUpdate=scheduleResponsiveUpdateA5824;
+['resize','orientationchange','fullscreenchange'].forEach(ev=>window.addEventListener(ev,scheduleResponsiveUpdateA5824,{passive:true}));
+if(window.visualViewport)window.visualViewport.addEventListener('resize',scheduleResponsiveUpdateA5824,{passive:true});
+function installSetScreenMediaHookA5824(){try{if(typeof setScreen==='function'&&!setScreen.__A5824_MEDIA){const old=setScreen;const w=function(){const out=old.apply(this,arguments);raf(()=>{applyMediaPolicyA5824();if(/battle|pkbattle/.test(String(arguments[0]||'')))window.KA_A5824_preloadBattleAssets();});return out;};w.__A5824_MEDIA=true;window.setScreen=w;setScreen=w;}}catch(e){}}
+function auditA5824(){return {version:VERSION_A5824,loadingBooted:!!window.__KA_A5824_BOOTED,media:{images:qsa('img').length,lazy:qsa('img[loading="lazy"]').length,async:qsa('img[decoding="async"]').length,audio:qsa('audio').length,audioNone:qsa('audio[preload="none"]').length,audioMeta:qsa('audio[preload="metadata"]').length},cache:{rev:QB_CACHE.rev,enabledCached:!!QB_CACHE.enabled,pkCache:QB_CACHE.pk.size,kingdomCache:QB_CACHE.kingdom.size},responsive:{classes:[...document.body.classList].filter(c=>/^battle-|^pk-|^result|^is-pk|^is-battle/.test(c)),appHeight:getComputedStyle(document.documentElement).getPropertyValue('--app-height')},screen:window.state&&state.screen};}
+function installA5824(){installQuestionCacheA5824();installCacheClearHooksA5824();wrapPoolsA5824();installSetScreenMediaHookA5824();applyMediaPolicyA5824();window.KA_A5824_performanceAudit=auditA5824;try{let meta=document.querySelector('meta[name="ka-version"]');if(!meta){meta=document.createElement('meta');meta.name='ka-version';document.head.appendChild(meta);}meta.content=VERSION_A5824;document.title='Knowledge Adventure '+VERSION_A5824;}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installA5824,{once:true});else installA5824();
+setTimeout(installA5824,0);setTimeout(updateResponsiveLightA5824,320);
 })();
 </script>
 
